@@ -26,7 +26,7 @@ namespace DocuSign.WebForms.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.0-rc7";
+        public const string Version = "1.0.0-rc8";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format

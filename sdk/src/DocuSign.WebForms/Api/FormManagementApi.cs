@@ -248,6 +248,12 @@ namespace DocuSign.WebForms.Api
                 if (options.state != null) localVarQueryParams.Add("state", this.ApiClient.ParameterToString(options.state)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -331,6 +337,12 @@ namespace DocuSign.WebForms.Api
                 if (options.state != null) localVarQueryParams.Add("state", this.ApiClient.ParameterToString(options.state)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -438,6 +450,12 @@ namespace DocuSign.WebForms.Api
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -522,6 +540,12 @@ namespace DocuSign.WebForms.Api
                 if (options.count != null) localVarQueryParams.Add("count", this.ApiClient.ParameterToString(options.count)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request

@@ -405,6 +405,12 @@ namespace DocuSign.WebForms.Api
                 localVarPostBody = createInstanceBody; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -495,6 +501,12 @@ namespace DocuSign.WebForms.Api
                 localVarPostBody = createInstanceBody; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -579,6 +591,12 @@ namespace DocuSign.WebForms.Api
             if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
             if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -662,6 +680,12 @@ namespace DocuSign.WebForms.Api
             if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
             if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -754,6 +778,12 @@ namespace DocuSign.WebForms.Api
                 if (options.clientUserId != null) localVarQueryParams.Add("client_user_id", this.ApiClient.ParameterToString(options.clientUserId)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -837,6 +867,12 @@ namespace DocuSign.WebForms.Api
                 if (options.clientUserId != null) localVarQueryParams.Add("client_user_id", this.ApiClient.ParameterToString(options.clientUserId)); // query parameter
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -921,6 +957,12 @@ namespace DocuSign.WebForms.Api
             if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
             if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -1004,6 +1046,12 @@ namespace DocuSign.WebForms.Api
             if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
             if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -1101,6 +1149,12 @@ namespace DocuSign.WebForms.Api
                 localVarPostBody = updateInstanceBody; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
@@ -1197,6 +1251,12 @@ namespace DocuSign.WebForms.Api
                 localVarPostBody = updateInstanceBody; // byte array
             }
 
+            // authentication (docusignAccessCode) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
+            }
 
 
             // make the HTTP request
