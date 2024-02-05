@@ -30,8 +30,8 @@ namespace DocuSign.WebForms.Api
         /// Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
         WebForm GetForm(string accountId, string formId, FormManagementApi.GetFormOptions options = null);
@@ -43,8 +43,8 @@ namespace DocuSign.WebForms.Api
         /// Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<WebForm> GetFormWithHttpInfo(string accountId, string formId, FormManagementApi.GetFormOptions options = null);
@@ -80,8 +80,8 @@ namespace DocuSign.WebForms.Api
         /// Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of WebForm</returns>
         System.Threading.Tasks.Task<WebForm> GetFormAsync(string accountId, string formId, FormManagementApi.GetFormOptions options = null);
@@ -93,8 +93,8 @@ namespace DocuSign.WebForms.Api
         /// Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (WebForm)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebForm>> GetFormAsyncWithHttpInfo(string accountId, string formId, FormManagementApi.GetFormOptions options = null);
@@ -180,7 +180,7 @@ namespace DocuSign.WebForms.Api
         /// </summary>
         public class GetFormOptions
         {
-            /// The state of the form content 
+            /// The state of the web form configuration 
             public string state {get; set;}
         }
 
@@ -188,8 +188,8 @@ namespace DocuSign.WebForms.Api
         /// Get Form Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>WebForm</returns>
         public WebForm GetForm(string accountId, string formId, FormManagementApi.GetFormOptions options = null)
@@ -202,8 +202,8 @@ namespace DocuSign.WebForms.Api
         /// Get Form Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of WebForm</returns>
         public ApiResponse<WebForm> GetFormWithHttpInfo(string accountId, string formId, FormManagementApi.GetFormOptions options = null)
@@ -277,8 +277,8 @@ namespace DocuSign.WebForms.Api
         /// Get Form Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of WebForm</returns>
         public async System.Threading.Tasks.Task<WebForm> GetFormAsync(string accountId, string formId, FormManagementApi.GetFormOptions options = null)
@@ -291,8 +291,8 @@ namespace DocuSign.WebForms.Api
         /// Get Form Retrieves form information filter by form id and state. The &#x60;state&#x60; parameter is optional and can accept value from &#x60;draft, active&#x60;.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>Task of ApiResponse (WebForm)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<WebForm>> GetFormAsyncWithHttpInfo(string accountId, string formId, FormManagementApi.GetFormOptions options = null)

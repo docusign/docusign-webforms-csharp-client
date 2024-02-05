@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// Container for the components map and future form data
+    /// Container for the components map used during configuration and data collection
     /// </summary>
     [DataContract]
     public partial class WebFormContent :  IEquatable<WebFormContent>, IValidatableObject

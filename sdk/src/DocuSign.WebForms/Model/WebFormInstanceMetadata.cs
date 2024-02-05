@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// WebFormInstanceMetadata
+    /// Web Form Instance metadata containing information like created by, created time, etc.
     /// </summary>
     [DataContract]
     public partial class WebFormInstanceMetadata :  IEquatable<WebFormInstanceMetadata>, IValidatableObject
@@ -35,11 +35,11 @@ namespace DocuSign.WebForms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebFormInstanceMetadata" /> class.
         /// </summary>
-        /// <param name="ExpirationDateTime">The datetime after which the webform instance is inaccessible. (required).</param>
-        /// <param name="CreatedDateTime">DateTime when the webform instance is created (required).</param>
-        /// <param name="CreatedBy">The user that created the webform instance (required).</param>
-        /// <param name="LastModifiedDateTime">DateTime when the webform instance is last modified.</param>
-        /// <param name="LastModifiedBy">The user that last modified the webform instance.</param>
+        /// <param name="ExpirationDateTime">ExpirationDateTime (required).</param>
+        /// <param name="CreatedDateTime">CreatedDateTime (required).</param>
+        /// <param name="CreatedBy">The user that created the Web Form Instance (required).</param>
+        /// <param name="LastModifiedDateTime">LastModifiedDateTime.</param>
+        /// <param name="LastModifiedBy">The user that last modified the Web Form Instance.</param>
         public WebFormInstanceMetadata(DateTime? ExpirationDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), WebFormUserInfo CreatedBy = default(WebFormUserInfo), DateTime? LastModifiedDateTime = default(DateTime?), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo))
         {
             // to ensure "ExpirationDateTime" is required (not null)
@@ -74,33 +74,30 @@ namespace DocuSign.WebForms.Model
         }
         
         /// <summary>
-        /// The datetime after which the webform instance is inaccessible.
+        /// Gets or Sets ExpirationDateTime
         /// </summary>
-        /// <value>The datetime after which the webform instance is inaccessible.</value>
         [DataMember(Name="expirationDateTime", EmitDefaultValue=false)]
         public DateTime? ExpirationDateTime { get; set; }
         /// <summary>
-        /// DateTime when the webform instance is created
+        /// Gets or Sets CreatedDateTime
         /// </summary>
-        /// <value>DateTime when the webform instance is created</value>
         [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
         public DateTime? CreatedDateTime { get; set; }
         /// <summary>
-        /// The user that created the webform instance
+        /// The user that created the Web Form Instance
         /// </summary>
-        /// <value>The user that created the webform instance</value>
+        /// <value>The user that created the Web Form Instance</value>
         [DataMember(Name="createdBy", EmitDefaultValue=false)]
         public WebFormUserInfo CreatedBy { get; set; }
         /// <summary>
-        /// DateTime when the webform instance is last modified
+        /// Gets or Sets LastModifiedDateTime
         /// </summary>
-        /// <value>DateTime when the webform instance is last modified</value>
         [DataMember(Name="lastModifiedDateTime", EmitDefaultValue=false)]
         public DateTime? LastModifiedDateTime { get; set; }
         /// <summary>
-        /// The user that last modified the webform instance
+        /// The user that last modified the Web Form Instance
         /// </summary>
-        /// <value>The user that last modified the webform instance</value>
+        /// <value>The user that last modified the Web Form Instance</value>
         [DataMember(Name="lastModifiedBy", EmitDefaultValue=false)]
         public WebFormUserInfo LastModifiedBy { get; set; }
         /// <summary>

@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// An object that contains the web form instance  required to render the webform instance and its metadata such as created by, created time
+    /// An object that contains the Web Form Instance required to render it  and its metadata such as created by, created time
     /// </summary>
     [DataContract]
     public partial class WebFormInstance :  IEquatable<WebFormInstance>, IValidatableObject
@@ -33,60 +33,26 @@ namespace DocuSign.WebForms.Model
         }
 
         /// <summary>
-        /// Webform instance status. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.
+        /// Gets or Sets Status
         /// </summary>
-        /// <value>Webform instance status. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum InstanceStatus
-        {
-            
-            /// <summary>
-            /// Enum INITIATED for value: INITIATED
-            /// </summary>
-            [EnumMember(Value = "INITIATED")]
-            INITIATED = 1,
-            
-            /// <summary>
-            /// Enum SUBMITTED for value: SUBMITTED
-            /// </summary>
-            [EnumMember(Value = "SUBMITTED")]
-            SUBMITTED = 2,
-            
-            /// <summary>
-            /// Enum EXPIRED for value: EXPIRED
-            /// </summary>
-            [EnumMember(Value = "EXPIRED")]
-            EXPIRED = 3,
-            
-            /// <summary>
-            /// Enum FAILED for value: FAILED
-            /// </summary>
-            [EnumMember(Value = "FAILED")]
-            FAILED = 4
-        }
-
-        /// <summary>
-        /// Webform instance status. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.
-        /// </summary>
-        /// <value>Webform instance status. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.</value>
         [DataMember(Name="status", EmitDefaultValue=false)]
         public InstanceStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebFormInstance" /> class.
         /// </summary>
-        /// <param name="FormUrl">The url used to render the form instance..</param>
+        /// <param name="FormUrl">FormUrl.</param>
         /// <param name="InstanceToken">InstanceToken.</param>
-        /// <param name="TokenExpirationDateTime">The datetime after which the token is expired and form instance is inaccessible..</param>
-        /// <param name="Id">A unique id of the instance created by user (required).</param>
-        /// <param name="FormId">Webform from which the instance is created.</param>
-        /// <param name="AccountId">Account identifier in which the webform resides.</param>
-        /// <param name="ClientUserId">The identifier provided by the user with create request.</param>
-        /// <param name="Tags">The tags provided by the user.</param>
-        /// <param name="Status">Webform instance status. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again..</param>
-        /// <param name="EnvelopeIds">The associated envelopeIds when the instance is submitted.</param>
-        /// <param name="InstanceMetadata">Webform instance metadata containing information like created by, created time, etc..</param>
+        /// <param name="TokenExpirationDateTime">TokenExpirationDateTime.</param>
+        /// <param name="Id">Id (required).</param>
+        /// <param name="FormId">Web form from which the instance is created.</param>
+        /// <param name="AccountId">AccountId.</param>
+        /// <param name="ClientUserId">ClientUserId.</param>
+        /// <param name="Tags">List of tags provided by the user with each request. This field is optional..</param>
+        /// <param name="Status">Status.</param>
+        /// <param name="Envelopes">The associated envelope that is created when the instance is submitted.</param>
+        /// <param name="InstanceMetadata">InstanceMetadata.</param>
         /// <param name="FormValues">FormValues.</param>
-        public WebFormInstance(string FormUrl = default(string), string InstanceToken = default(string), DateTime? TokenExpirationDateTime = default(DateTime?), string Id = default(string), string FormId = default(string), string AccountId = default(string), string ClientUserId = default(string), Tags Tags = default(Tags), InstanceStatus? Status = default(InstanceStatus?), List<string> EnvelopeIds = default(List<string>), WebFormInstanceMetadata InstanceMetadata = default(WebFormInstanceMetadata), WebFormValues FormValues = default(WebFormValues))
+        public WebFormInstance(string FormUrl = default(string), string InstanceToken = default(string), DateTime? TokenExpirationDateTime = default(DateTime?), string Id = default(string), string FormId = default(string), string AccountId = default(string), string ClientUserId = default(string), List<string> Tags = default(List<string>), InstanceStatus? Status = default(InstanceStatus?), List<WebFormInstanceEnvelopes> Envelopes = default(List<WebFormInstanceEnvelopes>), WebFormInstanceMetadata InstanceMetadata = default(WebFormInstanceMetadata), WebFormValues FormValues = default(WebFormValues))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -105,15 +71,14 @@ namespace DocuSign.WebForms.Model
             this.ClientUserId = ClientUserId;
             this.Tags = Tags;
             this.Status = Status;
-            this.EnvelopeIds = EnvelopeIds;
+            this.Envelopes = Envelopes;
             this.InstanceMetadata = InstanceMetadata;
             this.FormValues = FormValues;
         }
         
         /// <summary>
-        /// The url used to render the form instance.
+        /// Gets or Sets FormUrl
         /// </summary>
-        /// <value>The url used to render the form instance.</value>
         [DataMember(Name="formUrl", EmitDefaultValue=false)]
         public string FormUrl { get; set; }
         /// <summary>
@@ -122,51 +87,46 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="instanceToken", EmitDefaultValue=false)]
         public string InstanceToken { get; set; }
         /// <summary>
-        /// The datetime after which the token is expired and form instance is inaccessible.
+        /// Gets or Sets TokenExpirationDateTime
         /// </summary>
-        /// <value>The datetime after which the token is expired and form instance is inaccessible.</value>
         [DataMember(Name="tokenExpirationDateTime", EmitDefaultValue=false)]
         public DateTime? TokenExpirationDateTime { get; set; }
         /// <summary>
-        /// A unique id of the instance created by user
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>A unique id of the instance created by user</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// Webform from which the instance is created
+        /// Web form from which the instance is created
         /// </summary>
-        /// <value>Webform from which the instance is created</value>
+        /// <value>Web form from which the instance is created</value>
         [DataMember(Name="formId", EmitDefaultValue=false)]
         public string FormId { get; set; }
         /// <summary>
-        /// Account identifier in which the webform resides
+        /// Gets or Sets AccountId
         /// </summary>
-        /// <value>Account identifier in which the webform resides</value>
         [DataMember(Name="accountId", EmitDefaultValue=false)]
         public string AccountId { get; set; }
         /// <summary>
-        /// The identifier provided by the user with create request
+        /// Gets or Sets ClientUserId
         /// </summary>
-        /// <value>The identifier provided by the user with create request</value>
         [DataMember(Name="clientUserId", EmitDefaultValue=false)]
         public string ClientUserId { get; set; }
         /// <summary>
-        /// The tags provided by the user
+        /// List of tags provided by the user with each request. This field is optional.
         /// </summary>
-        /// <value>The tags provided by the user</value>
+        /// <value>List of tags provided by the user with each request. This field is optional.</value>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Tags Tags { get; set; }
+        public List<string> Tags { get; set; }
         /// <summary>
-        /// The associated envelopeIds when the instance is submitted
+        /// The associated envelope that is created when the instance is submitted
         /// </summary>
-        /// <value>The associated envelopeIds when the instance is submitted</value>
-        [DataMember(Name="envelopeIds", EmitDefaultValue=false)]
-        public List<string> EnvelopeIds { get; set; }
+        /// <value>The associated envelope that is created when the instance is submitted</value>
+        [DataMember(Name="envelopes", EmitDefaultValue=false)]
+        public List<WebFormInstanceEnvelopes> Envelopes { get; set; }
         /// <summary>
-        /// Webform instance metadata containing information like created by, created time, etc.
+        /// Gets or Sets InstanceMetadata
         /// </summary>
-        /// <value>Webform instance metadata containing information like created by, created time, etc.</value>
         [DataMember(Name="instanceMetadata", EmitDefaultValue=false)]
         public WebFormInstanceMetadata InstanceMetadata { get; set; }
         /// <summary>
@@ -191,7 +151,7 @@ namespace DocuSign.WebForms.Model
             sb.Append("  ClientUserId: ").Append(ClientUserId).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  EnvelopeIds: ").Append(EnvelopeIds).Append("\n");
+            sb.Append("  Envelopes: ").Append(Envelopes).Append("\n");
             sb.Append("  InstanceMetadata: ").Append(InstanceMetadata).Append("\n");
             sb.Append("  FormValues: ").Append(FormValues).Append("\n");
             sb.Append("}\n");
@@ -268,7 +228,7 @@ namespace DocuSign.WebForms.Model
                 (
                     this.Tags == other.Tags ||
                     this.Tags != null &&
-                    this.Tags.Equals(other.Tags)
+                    this.Tags.SequenceEqual(other.Tags)
                 ) && 
                 (
                     this.Status == other.Status ||
@@ -276,9 +236,9 @@ namespace DocuSign.WebForms.Model
                     this.Status.Equals(other.Status)
                 ) && 
                 (
-                    this.EnvelopeIds == other.EnvelopeIds ||
-                    this.EnvelopeIds != null &&
-                    this.EnvelopeIds.SequenceEqual(other.EnvelopeIds)
+                    this.Envelopes == other.Envelopes ||
+                    this.Envelopes != null &&
+                    this.Envelopes.SequenceEqual(other.Envelopes)
                 ) && 
                 (
                     this.InstanceMetadata == other.InstanceMetadata ||
@@ -321,8 +281,8 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.Tags.GetHashCode();
                 if (this.Status != null)
                     hash = hash * 59 + this.Status.GetHashCode();
-                if (this.EnvelopeIds != null)
-                    hash = hash * 59 + this.EnvelopeIds.GetHashCode();
+                if (this.Envelopes != null)
+                    hash = hash * 59 + this.Envelopes.GetHashCode();
                 if (this.InstanceMetadata != null)
                     hash = hash * 59 + this.InstanceMetadata.GetHashCode();
                 if (this.FormValues != null)

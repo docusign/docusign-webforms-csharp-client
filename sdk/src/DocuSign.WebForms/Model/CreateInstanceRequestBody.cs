@@ -33,6 +33,11 @@ namespace DocuSign.WebForms.Model
         }
 
         /// <summary>
+        /// Gets or Sets AuthenticationMethod
+        /// </summary>
+        [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
+        public AuthenticationMethod? AuthenticationMethod { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateInstanceRequestBody" /> class.
         /// </summary>
         /// <param name="FormValues">FormValues.</param>
@@ -43,8 +48,8 @@ namespace DocuSign.WebForms.Model
         /// <param name="SecurityDomain">SecurityDomain.</param>
         /// <param name="ReturnUrl">ReturnUrl.</param>
         /// <param name="ExpirationOffset">ExpirationOffset.</param>
-        /// <param name="Tags">Tags.</param>
-        public CreateInstanceRequestBody(WebFormValues FormValues = default(WebFormValues), string ClientUserId = default(string), DateTime? AuthenticationInstant = default(DateTime?), string AuthenticationMethod = default(string), string AssertionId = default(string), string SecurityDomain = default(string), string ReturnUrl = default(string), long? ExpirationOffset = default(long?), Tags Tags = default(Tags))
+        /// <param name="Tags">List of tags provided by the user with each request. This field is optional..</param>
+        public CreateInstanceRequestBody(WebFormValues FormValues = default(WebFormValues), string ClientUserId = default(string), string AuthenticationInstant = default(string), AuthenticationMethod? AuthenticationMethod = default(AuthenticationMethod?), string AssertionId = default(string), string SecurityDomain = default(string), string ReturnUrl = default(string), long? ExpirationOffset = default(long?), List<string> Tags = default(List<string>))
         {
             // to ensure "ClientUserId" is required (not null)
             if (ClientUserId == null)
@@ -79,12 +84,7 @@ namespace DocuSign.WebForms.Model
         /// Gets or Sets AuthenticationInstant
         /// </summary>
         [DataMember(Name="authenticationInstant", EmitDefaultValue=false)]
-        public DateTime? AuthenticationInstant { get; set; }
-        /// <summary>
-        /// Gets or Sets AuthenticationMethod
-        /// </summary>
-        [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
-        public string AuthenticationMethod { get; set; }
+        public string AuthenticationInstant { get; set; }
         /// <summary>
         /// Gets or Sets AssertionId
         /// </summary>
@@ -106,10 +106,11 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="expirationOffset", EmitDefaultValue=false)]
         public long? ExpirationOffset { get; set; }
         /// <summary>
-        /// Gets or Sets Tags
+        /// List of tags provided by the user with each request. This field is optional.
         /// </summary>
+        /// <value>List of tags provided by the user with each request. This field is optional.</value>
         [DataMember(Name="tags", EmitDefaultValue=false)]
-        public Tags Tags { get; set; }
+        public List<string> Tags { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -206,7 +207,7 @@ namespace DocuSign.WebForms.Model
                 (
                     this.Tags == other.Tags ||
                     this.Tags != null &&
-                    this.Tags.Equals(other.Tags)
+                    this.Tags.SequenceEqual(other.Tags)
                 );
         }
 

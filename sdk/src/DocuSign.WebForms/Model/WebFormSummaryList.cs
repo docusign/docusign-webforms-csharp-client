@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// A list of 0 or more paginated and filtered form summary items
+    /// A list of web form summary items.
     /// </summary>
     [DataContract]
     public partial class WebFormSummaryList :  IEquatable<WebFormSummaryList>, IValidatableObject
@@ -35,7 +35,7 @@ namespace DocuSign.WebForms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebFormSummaryList" /> class.
         /// </summary>
-        /// <param name="Items">List of web form summary items.</param>
+        /// <param name="Items">Array of web form items with each containing summary..</param>
         /// <param name="ResultSetSize">Result set size for current page.</param>
         /// <param name="TotalSetSize">Total result set size.</param>
         /// <param name="StartPosition">Starting position of fields returned for the current page.</param>
@@ -54,9 +54,9 @@ namespace DocuSign.WebForms.Model
         }
         
         /// <summary>
-        /// List of web form summary items
+        /// Array of web form items with each containing summary.
         /// </summary>
-        /// <value>List of web form summary items</value>
+        /// <value>Array of web form items with each containing summary.</value>
         [DataMember(Name="items", EmitDefaultValue=false)]
         public List<WebFormSummary> Items { get; set; }
         /// <summary>

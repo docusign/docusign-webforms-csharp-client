@@ -25,7 +25,7 @@ namespace DocuSign.WebForms.Model
     /// Each component type contains additional properties
     /// </summary>
     [DataContract]
-    public partial class WebFormComponent :  IEquatable<WebFormComponent>, IValidatableObject
+    public partial class WebFormComponent : Dictionary<String, Object>,  IEquatable<WebFormComponent>, IValidatableObject
     {
         public WebFormComponent()
         {
@@ -97,7 +97,7 @@ namespace DocuSign.WebForms.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public  new string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// WebFormMetadata
+    /// Form metadata
     /// </summary>
     [DataContract]
     public partial class WebFormMetadata :  IEquatable<WebFormMetadata>, IValidatableObject
@@ -30,27 +30,6 @@ namespace DocuSign.WebForms.Model
         public WebFormMetadata()
         {
             // Empty Constructor
-        }
-
-        /// <summary>
-        /// The source from which the webform is created. Accepted values are [upload, templates, blank]
-        /// </summary>
-        /// <value>The source from which the webform is created. Accepted values are [upload, templates, blank]</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum WebFormSource
-        {
-            
-            /// <summary>
-            /// Enum Templates for value: templates
-            /// </summary>
-            [EnumMember(Value = "templates")]
-            Templates = 1,
-            
-            /// <summary>
-            /// Enum Blank for value: blank
-            /// </summary>
-            [EnumMember(Value = "blank")]
-            Blank = 2
         }
 
         /// <summary>
@@ -79,11 +58,11 @@ namespace DocuSign.WebForms.Model
         /// <param name="LastPublishedDateTime">Track the last time a draft version was published to active.</param>
         /// <param name="LastEnabledDateTime">Track the last time the form was enabled.</param>
         /// <param name="LastDisabledDateTime">Track the last time the form was disabled.</param>
-        /// <param name="LastSenderConsentDateTime">Track the last time a user added their consent for the form.</param>
+        /// <param name="LastSenderConsentDateTime">Track the last time a user added their consent for the form..</param>
         /// <param name="PublishedSlug">The public friendly slug that is used to access the form from the player.</param>
-        /// <param name="PublishedComponentNames">Dictionary containing mapping of componentName to ADM type for all the published components.</param>
-        /// <param name="AdmModelNamespace">The ADM Model namespace of a published WebForm. The namespace does not include version.</param>
-        /// <param name="AdmModelVersion">The ADM Model version of a published WebForm. We only bump up minor version when publish a form..</param>
+        /// <param name="PublishedComponentNames">A dictionary containing the mapping of component names to their respective component types for all the published components..</param>
+        /// <param name="AdmModelNamespace">The namespace of a published web form. The namespace does not include version..</param>
+        /// <param name="AdmModelVersion">The namespace version of a published web form. We bump up minor version only when a form is published..</param>
         public WebFormMetadata(WebFormSource? Source = default(WebFormSource?), WebFormUserInfo Owner = default(WebFormUserInfo), WebFormUserInfo Sender = default(WebFormUserInfo), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormContentModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormPropertiesModifiedBy = default(WebFormUserInfo), WebFormUserInfo LastPublishedBy = default(WebFormUserInfo), WebFormUserInfo LastEnabledBy = default(WebFormUserInfo), WebFormUserInfo LastDisabledBy = default(WebFormUserInfo), DateTime? ArchivedDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), DateTime? LastModifiedDateTime = default(DateTime?), DateTime? FormContentModifiedDateTime = default(DateTime?), DateTime? FormPropertiesModifiedDateTime = default(DateTime?), DateTime? LastPublishedDateTime = default(DateTime?), DateTime? LastEnabledDateTime = default(DateTime?), DateTime? LastDisabledDateTime = default(DateTime?), DateTime? LastSenderConsentDateTime = default(DateTime?), string PublishedSlug = default(string), WebFormPublishedNames PublishedComponentNames = default(WebFormPublishedNames), string AdmModelNamespace = default(string), string AdmModelVersion = default(string))
         {
             this.Source = Source;
@@ -207,9 +186,9 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="lastDisabledDateTime", EmitDefaultValue=false)]
         public DateTime? LastDisabledDateTime { get; set; }
         /// <summary>
-        /// Track the last time a user added their consent for the form
+        /// Track the last time a user added their consent for the form.
         /// </summary>
-        /// <value>Track the last time a user added their consent for the form</value>
+        /// <value>Track the last time a user added their consent for the form.</value>
         [DataMember(Name="lastSenderConsentDateTime", EmitDefaultValue=false)]
         public DateTime? LastSenderConsentDateTime { get; set; }
         /// <summary>
@@ -219,21 +198,21 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="publishedSlug", EmitDefaultValue=false)]
         public string PublishedSlug { get; set; }
         /// <summary>
-        /// Dictionary containing mapping of componentName to ADM type for all the published components
+        /// A dictionary containing the mapping of component names to their respective component types for all the published components.
         /// </summary>
-        /// <value>Dictionary containing mapping of componentName to ADM type for all the published components</value>
+        /// <value>A dictionary containing the mapping of component names to their respective component types for all the published components.</value>
         [DataMember(Name="publishedComponentNames", EmitDefaultValue=false)]
         public WebFormPublishedNames PublishedComponentNames { get; set; }
         /// <summary>
-        /// The ADM Model namespace of a published WebForm. The namespace does not include version
+        /// The namespace of a published web form. The namespace does not include version.
         /// </summary>
-        /// <value>The ADM Model namespace of a published WebForm. The namespace does not include version</value>
+        /// <value>The namespace of a published web form. The namespace does not include version.</value>
         [DataMember(Name="admModelNamespace", EmitDefaultValue=false)]
         public string AdmModelNamespace { get; set; }
         /// <summary>
-        /// The ADM Model version of a published WebForm. We only bump up minor version when publish a form.
+        /// The namespace version of a published web form. We bump up minor version only when a form is published.
         /// </summary>
-        /// <value>The ADM Model version of a published WebForm. We only bump up minor version when publish a form.</value>
+        /// <value>The namespace version of a published web form. We bump up minor version only when a form is published.</value>
         [DataMember(Name="admModelVersion", EmitDefaultValue=false)]
         public string AdmModelVersion { get; set; }
         /// <summary>

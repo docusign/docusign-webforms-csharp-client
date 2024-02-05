@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// Information about a DocuSign system user.  The user exists within the account associated with the form.
+    /// Information about a DocuSign system user. The user exists within the account associated with the form.
     /// </summary>
     [DataContract]
     public partial class WebFormUserInfo :  IEquatable<WebFormUserInfo>, IValidatableObject
@@ -35,7 +35,7 @@ namespace DocuSign.WebForms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebFormUserInfo" /> class.
         /// </summary>
-        /// <param name="UserId">DocuSign user identifier..</param>
+        /// <param name="UserId">UserId.</param>
         /// <param name="UserName">Name of the user that can be displayed in the user interface..</param>
         public WebFormUserInfo(string UserId = default(string), string UserName = default(string))
         {
@@ -44,9 +44,8 @@ namespace DocuSign.WebForms.Model
         }
         
         /// <summary>
-        /// DocuSign user identifier.
+        /// Gets or Sets UserId
         /// </summary>
-        /// <value>DocuSign user identifier.</value>
         [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
         /// <summary>

@@ -22,37 +22,30 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// An object that fully describes an instance of a form
+    /// WebFormInstanceEnvelopes
     /// </summary>
     [DataContract]
-    public partial class WebForm : WebFormSummary,  IEquatable<WebForm>, IValidatableObject
+    public partial class WebFormInstanceEnvelopes :  IEquatable<WebFormInstanceEnvelopes>, IValidatableObject
     {
-        public WebForm()
+        public WebFormInstanceEnvelopes()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebForm" /> class.
+        /// Initializes a new instance of the <see cref="WebFormInstanceEnvelopes" /> class.
         /// </summary>
-        /// <param name="VersionId">VersionId.</param>
-        /// <param name="FormContent">FormContent.</param>
-        public WebForm(int? VersionId = default(int?), WebFormContent FormContent = default(WebFormContent), string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
+        /// <param name="Id">Id.</param>
+        public WebFormInstanceEnvelopes(string Id = default(string))
         {
-            this.VersionId = VersionId;
-            this.FormContent = FormContent;
+            this.Id = Id;
         }
         
         /// <summary>
-        /// Gets or Sets VersionId
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="versionId", EmitDefaultValue=false)]
-        public int? VersionId { get; set; }
-        /// <summary>
-        /// Gets or Sets FormContent
-        /// </summary>
-        [DataMember(Name="formContent", EmitDefaultValue=false)]
-        public WebFormContent FormContent { get; set; }
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +53,8 @@ namespace DocuSign.WebForms.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WebForm {\n");
-            sb.Append("  VersionId: ").Append(VersionId).Append("\n");
-            sb.Append("  FormContent: ").Append(FormContent).Append("\n");
+            sb.Append("class WebFormInstanceEnvelopes {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,7 +63,7 @@ namespace DocuSign.WebForms.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -84,15 +76,15 @@ namespace DocuSign.WebForms.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as WebForm);
+            return this.Equals(obj as WebFormInstanceEnvelopes);
         }
 
         /// <summary>
-        /// Returns true if WebForm instances are equal
+        /// Returns true if WebFormInstanceEnvelopes instances are equal
         /// </summary>
-        /// <param name="other">Instance of WebForm to be compared</param>
+        /// <param name="other">Instance of WebFormInstanceEnvelopes to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WebForm other)
+        public bool Equals(WebFormInstanceEnvelopes other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -100,14 +92,9 @@ namespace DocuSign.WebForms.Model
 
             return 
                 (
-                    this.VersionId == other.VersionId ||
-                    this.VersionId != null &&
-                    this.VersionId.Equals(other.VersionId)
-                ) && 
-                (
-                    this.FormContent == other.FormContent ||
-                    this.FormContent != null &&
-                    this.FormContent.Equals(other.FormContent)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 );
         }
 
@@ -122,10 +109,8 @@ namespace DocuSign.WebForms.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.VersionId != null)
-                    hash = hash * 59 + this.VersionId.GetHashCode();
-                if (this.FormContent != null)
-                    hash = hash * 59 + this.FormContent.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
                 return hash;
             }
         }

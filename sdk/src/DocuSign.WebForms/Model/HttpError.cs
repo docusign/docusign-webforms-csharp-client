@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// An error occurred processing a request. Source - https://www.baeldung.com/rest-api-error-handling-best-practices
+    /// An error occurred while processing a request. Source - https://www.baeldung.com/rest-api-error-handling-best-practices
     /// </summary>
     [DataContract]
     public partial class HttpError :  IEquatable<HttpError>, IValidatableObject
