@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// Key-value pairs of data used to create a form instance.
+    /// Key-value pairs (where key is the component name and value is the form value) used to create a form instance. For key of type TextBox, Email, Date, Select and RadioButtonGroup the value is of string type. For key of type Number, the value is of number type. For key of type of CheckboxGroup, the value is of type array of string.
     /// </summary>
     [DataContract]
     public partial class WebFormValues : Dictionary<String, Object>,  IEquatable<WebFormValues>, IValidatableObject

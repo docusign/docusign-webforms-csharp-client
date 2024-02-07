@@ -24,28 +24,28 @@ namespace DocuSign.WebForms.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Creates an instance of the webform
+        /// Creates an instance of the web form
         /// </summary>
         /// <remarks>
-        /// Creates an instance of the webform.
+        /// Creates an instance of the web form.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns></returns>
         WebFormInstance CreateInstance(string accountId, string formId, CreateInstanceRequestBody createInstanceBody);
 
         /// <summary>
-        /// Creates an instance of the webform
+        /// Creates an instance of the web form
         /// </summary>
         /// <remarks>
-        /// Creates an instance of the webform.
+        /// Creates an instance of the web form.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<WebFormInstance> CreateInstanceWithHttpInfo(string accountId, string formId, CreateInstanceRequestBody createInstanceBody);
         /// <summary>
@@ -55,9 +55,9 @@ namespace DocuSign.WebForms.Api
         /// Retrieves instance information filter by instance id
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns></returns>
         WebFormInstance GetInstance(string accountId, string formId, string instanceId);
 
@@ -68,46 +68,46 @@ namespace DocuSign.WebForms.Api
         /// Retrieves instance information filter by instance id
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<WebFormInstance> GetInstanceWithHttpInfo(string accountId, string formId, string instanceId);
         /// <summary>
         /// List instances
         /// </summary>
         /// <remarks>
-        /// List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns></returns>
-        List<WebFormInstance> ListInstances(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
+        WebFormInstanceList ListInstances(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
 
         /// <summary>
         /// List instances
         /// </summary>
         /// <remarks>
-        /// List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
         /// <returns>ApiResponse of </returns>
-        ApiResponse<List<WebFormInstance>> ListInstancesWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
+        ApiResponse<WebFormInstanceList> ListInstancesWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
         /// <summary>
         /// Refreshes the instance token
         /// </summary>
         /// <remarks>
-        /// Generates new instance token for the existing webform instance.
+        /// Generates new instance token for the existing Web Form Instance.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns></returns>
         WebFormInstance RefreshToken(string accountId, string formId, string instanceId);
 
@@ -115,66 +115,39 @@ namespace DocuSign.WebForms.Api
         /// Refreshes the instance token
         /// </summary>
         /// <remarks>
-        /// Generates new instance token for the existing webform instance.
+        /// Generates new instance token for the existing Web Form Instance.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>ApiResponse of </returns>
         ApiResponse<WebFormInstance> RefreshTokenWithHttpInfo(string accountId, string formId, string instanceId);
-        /// <summary>
-        /// Update form instance
-        /// </summary>
-        /// <remarks>
-        /// Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </remarks>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns></returns>
-        WebFormInstance UpdateInstance(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody);
-
-        /// <summary>
-        /// Update form instance
-        /// </summary>
-        /// <remarks>
-        /// Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </remarks>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>ApiResponse of </returns>
-        ApiResponse<WebFormInstance> UpdateInstanceWithHttpInfo(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Creates an instance of the webform
+        /// Creates an instance of the web form
         /// </summary>
         /// <remarks>
-        /// Creates an instance of the webform.
+        /// Creates an instance of the web form.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>Task of WebFormInstance</returns>
         System.Threading.Tasks.Task<WebFormInstance> CreateInstanceAsync(string accountId, string formId, CreateInstanceRequestBody createInstanceBody);
 
         /// <summary>
-        /// Creates an instance of the webform
+        /// Creates an instance of the web form
         /// </summary>
         /// <remarks>
-        /// Creates an instance of the webform.
+        /// Creates an instance of the web form.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> CreateInstanceAsyncWithHttpInfo(string accountId, string formId, CreateInstanceRequestBody createInstanceBody);
         /// <summary>
@@ -184,9 +157,9 @@ namespace DocuSign.WebForms.Api
         /// Retrieves instance information filter by instance id
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of WebFormInstance</returns>
         System.Threading.Tasks.Task<WebFormInstance> GetInstanceAsync(string accountId, string formId, string instanceId);
 
@@ -197,46 +170,46 @@ namespace DocuSign.WebForms.Api
         /// Retrieves instance information filter by instance id
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> GetInstanceAsyncWithHttpInfo(string accountId, string formId, string instanceId);
         /// <summary>
         /// List instances
         /// </summary>
         /// <remarks>
-        /// List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of List&lt;WebFormInstance&gt;</returns>
-        System.Threading.Tasks.Task<List<WebFormInstance>> ListInstancesAsync(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
+        /// <returns>Task of WebFormInstanceList</returns>
+        System.Threading.Tasks.Task<WebFormInstanceList> ListInstancesAsync(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
 
         /// <summary>
         /// List instances
         /// </summary>
         /// <remarks>
-        /// List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (List&lt;WebFormInstance&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WebFormInstance>>> ListInstancesAsyncWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
+        /// <returns>Task of ApiResponse (WebFormInstanceList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WebFormInstanceList>> ListInstancesAsyncWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null);
         /// <summary>
         /// Refreshes the instance token
         /// </summary>
         /// <remarks>
-        /// Generates new instance token for the existing webform instance.
+        /// Generates new instance token for the existing Web Form Instance.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of WebFormInstance</returns>
         System.Threading.Tasks.Task<WebFormInstance> RefreshTokenAsync(string accountId, string formId, string instanceId);
 
@@ -244,41 +217,14 @@ namespace DocuSign.WebForms.Api
         /// Refreshes the instance token
         /// </summary>
         /// <remarks>
-        /// Generates new instance token for the existing webform instance.
+        /// Generates new instance token for the existing Web Form Instance.
         /// </remarks>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> RefreshTokenAsyncWithHttpInfo(string accountId, string formId, string instanceId);
-        /// <summary>
-        /// Update form instance
-        /// </summary>
-        /// <remarks>
-        /// Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </remarks>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>Task of WebFormInstance</returns>
-        System.Threading.Tasks.Task<WebFormInstance> UpdateInstanceAsync(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody);
-
-        /// <summary>
-        /// Update form instance
-        /// </summary>
-        /// <remarks>
-        /// Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </remarks>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>Task of ApiResponse (WebFormInstance)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> UpdateInstanceAsyncWithHttpInfo(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody);
         #endregion Asynchronous Operations
     }
 
@@ -335,12 +281,12 @@ namespace DocuSign.WebForms.Api
 
 
         /// <summary>
-        /// Creates an instance of the webform Creates an instance of the webform.
+        /// Creates an instance of the web form Creates an instance of the web form.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>WebFormInstance</returns>
         public WebFormInstance CreateInstance(string accountId, string formId, CreateInstanceRequestBody createInstanceBody)
         {
@@ -349,12 +295,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Creates an instance of the webform Creates an instance of the webform.
+        /// Creates an instance of the web form Creates an instance of the web form.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>ApiResponse of WebFormInstance</returns>
         public ApiResponse<WebFormInstance> CreateInstanceWithHttpInfo(string accountId, string formId, CreateInstanceRequestBody createInstanceBody)
         {
@@ -431,12 +377,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Creates an instance of the webform Creates an instance of the webform.
+        /// Creates an instance of the web form Creates an instance of the web form.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>Task of WebFormInstance</returns>
         public async System.Threading.Tasks.Task<WebFormInstance> CreateInstanceAsync(string accountId, string formId, CreateInstanceRequestBody createInstanceBody)
         {
@@ -445,12 +391,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Creates an instance of the webform Creates an instance of the webform.
+        /// Creates an instance of the web form Creates an instance of the web form.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="createInstanceBody"></param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="createInstanceBody">Request body containing properties that will be used to create instance.</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> CreateInstanceAsyncWithHttpInfo(string accountId, string formId, CreateInstanceRequestBody createInstanceBody)
         {
@@ -531,9 +477,9 @@ namespace DocuSign.WebForms.Api
         /// Get form instance Retrieves instance information filter by instance id
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>WebFormInstance</returns>
         public WebFormInstance GetInstance(string accountId, string formId, string instanceId)
         {
@@ -545,9 +491,9 @@ namespace DocuSign.WebForms.Api
         /// Get form instance Retrieves instance information filter by instance id
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>ApiResponse of WebFormInstance</returns>
         public ApiResponse<WebFormInstance> GetInstanceWithHttpInfo(string accountId, string formId, string instanceId)
         {
@@ -620,9 +566,9 @@ namespace DocuSign.WebForms.Api
         /// Get form instance Retrieves instance information filter by instance id
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of WebFormInstance</returns>
         public async System.Threading.Tasks.Task<WebFormInstance> GetInstanceAsync(string accountId, string formId, string instanceId)
         {
@@ -634,9 +580,9 @@ namespace DocuSign.WebForms.Api
         /// Get form instance Retrieves instance information filter by instance id
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> GetInstanceAsyncWithHttpInfo(string accountId, string formId, string instanceId)
         {
@@ -706,7 +652,7 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// List instances List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List instances List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </summary>
         public class ListInstancesOptions
         {
@@ -715,28 +661,28 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// List instances List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List instances List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>List&lt;WebFormInstance&gt;</returns>
-        public List<WebFormInstance> ListInstances(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
+        /// <returns>WebFormInstanceList</returns>
+        public WebFormInstanceList ListInstances(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
         {
-             ApiResponse<List<WebFormInstance>> localVarResponse = ListInstancesWithHttpInfo(accountId, formId, options);
+             ApiResponse<WebFormInstanceList> localVarResponse = ListInstancesWithHttpInfo(accountId, formId, options);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List instances List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List instances List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>ApiResponse of List&lt;WebFormInstance&gt;</returns>
-        public ApiResponse<List<WebFormInstance>> ListInstancesWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
+        /// <returns>ApiResponse of WebFormInstanceList</returns>
+        public ApiResponse<WebFormInstanceList> ListInstancesWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -798,34 +744,34 @@ namespace DocuSign.WebForms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<WebFormInstance>>(localVarStatusCode, 
+            return new ApiResponse<WebFormInstanceList>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (List<WebFormInstance>)this.ApiClient.Deserialize(localVarResponse, typeof(List<WebFormInstance>)));
+                (WebFormInstanceList)this.ApiClient.Deserialize(localVarResponse, typeof(WebFormInstanceList)));
         }
 
         /// <summary>
-        /// List instances List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List instances List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of List&lt;WebFormInstance&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WebFormInstance>> ListInstancesAsync(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
+        /// <returns>Task of WebFormInstanceList</returns>
+        public async System.Threading.Tasks.Task<WebFormInstanceList> ListInstancesAsync(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
         {
-             ApiResponse<List<WebFormInstance>> localVarResponse = await ListInstancesAsyncWithHttpInfo(accountId, formId, options);
+             ApiResponse<WebFormInstanceList> localVarResponse = await ListInstancesAsyncWithHttpInfo(accountId, formId, options);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List instances List all the instances of a webform in an account. When filtered by clientUserId, it will return instances having same clientUserId
+        /// List instances List all the instances of a web form in an account. When filtered by clientUserId, it will return instances having same clientUserId
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form that is consistent for it&#39;s lifetime</param>
         /// <param name="options">Options for modifying the behavior of the function.</param>
-        /// <returns>Task of ApiResponse (List&lt;WebFormInstance&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<WebFormInstance>>> ListInstancesAsyncWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
+        /// <returns>Task of ApiResponse (WebFormInstanceList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<WebFormInstanceList>> ListInstancesAsyncWithHttpInfo(string accountId, string formId, FormInstanceManagementApi.ListInstancesOptions options = null)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -887,19 +833,19 @@ namespace DocuSign.WebForms.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<WebFormInstance>>(localVarStatusCode, 
+            return new ApiResponse<WebFormInstanceList>(localVarStatusCode, 
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (List<WebFormInstance>)this.ApiClient.Deserialize(localVarResponse, typeof(List<WebFormInstance>)));
+                (WebFormInstanceList)this.ApiClient.Deserialize(localVarResponse, typeof(WebFormInstanceList)));
         }
 
 
         /// <summary>
-        /// Refreshes the instance token Generates new instance token for the existing webform instance.
+        /// Refreshes the instance token Generates new instance token for the existing Web Form Instance.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>WebFormInstance</returns>
         public WebFormInstance RefreshToken(string accountId, string formId, string instanceId)
         {
@@ -908,12 +854,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Refreshes the instance token Generates new instance token for the existing webform instance.
+        /// Refreshes the instance token Generates new instance token for the existing Web Form Instance.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>ApiResponse of WebFormInstance</returns>
         public ApiResponse<WebFormInstance> RefreshTokenWithHttpInfo(string accountId, string formId, string instanceId)
         {
@@ -983,12 +929,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Refreshes the instance token Generates new instance token for the existing webform instance.
+        /// Refreshes the instance token Generates new instance token for the existing Web Form Instance.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of WebFormInstance</returns>
         public async System.Threading.Tasks.Task<WebFormInstance> RefreshTokenAsync(string accountId, string formId, string instanceId)
         {
@@ -997,12 +943,12 @@ namespace DocuSign.WebForms.Api
         }
 
         /// <summary>
-        /// Refreshes the instance token Generates new instance token for the existing webform instance.
+        /// Refreshes the instance token Generates new instance token for the existing Web Form Instance.
         /// </summary>
         /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
+        /// <param name="accountId">Account identifier in which the web form resides</param>
+        /// <param name="formId">Unique identifier for a web form entity that is consistent for it&#39;s lifetime</param>
+        /// <param name="instanceId">Unique identifier for a Web Form Instance that is consistent until its expiration</param>
         /// <returns>Task of ApiResponse (WebFormInstance)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> RefreshTokenAsyncWithHttpInfo(string accountId, string formId, string instanceId)
         {
@@ -1063,211 +1009,6 @@ namespace DocuSign.WebForms.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("RefreshToken", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<WebFormInstance>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (WebFormInstance)this.ApiClient.Deserialize(localVarResponse, typeof(WebFormInstance)));
-        }
-
-
-        /// <summary>
-        /// Update form instance Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </summary>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>WebFormInstance</returns>
-        public WebFormInstance UpdateInstance(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody)
-        {
-             ApiResponse<WebFormInstance> localVarResponse = UpdateInstanceWithHttpInfo(accountId, formId, instanceId, updateInstanceBody);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update form instance Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </summary>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>ApiResponse of WebFormInstance</returns>
-        public ApiResponse<WebFormInstance> UpdateInstanceWithHttpInfo(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'formId' is set
-            if (formId == null)
-                throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'instanceId' is set
-            if (instanceId == null)
-                throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'updateInstanceBody' is set
-            if (updateInstanceBody == null)
-                throw new ApiException(400, "Missing required parameter 'updateInstanceBody' when calling FormInstanceManagementApi->UpdateInstance");
-
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
-            if (updateInstanceBody != null && updateInstanceBody.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(updateInstanceBody); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = updateInstanceBody; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("PATCH"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = this.ApiClient.CallApi(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateInstance", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<WebFormInstance>(localVarStatusCode, 
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()), 
-                (WebFormInstance)this.ApiClient.Deserialize(localVarResponse, typeof(WebFormInstance)));
-        }
-
-        /// <summary>
-        /// Update form instance Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </summary>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>Task of WebFormInstance</returns>
-        public async System.Threading.Tasks.Task<WebFormInstance> UpdateInstanceAsync(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody)
-        {
-             ApiResponse<WebFormInstance> localVarResponse = await UpdateInstanceAsyncWithHttpInfo(accountId, formId, instanceId, updateInstanceBody);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update form instance Preferred endpoint to update form instance properties, including clearing out formValues
-        /// </summary>
-        /// <exception cref="DocuSign.WebForms.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountId">Account identifier in which the webform resides</param>
-        /// <param name="formId">Unique identifier for a webform entity that is consistent for it&#39;s lifetime</param>
-        /// <param name="instanceId">Unique identifier for a webform instance that is consistent until its expiration</param>
-        /// <param name="updateInstanceBody"></param>
-        /// <returns>Task of ApiResponse (WebFormInstance)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WebFormInstance>> UpdateInstanceAsyncWithHttpInfo(string accountId, string formId, string instanceId, UpdateInstanceRequestBody updateInstanceBody)
-        {
-            // verify the required parameter 'accountId' is set
-            if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'formId' is set
-            if (formId == null)
-                throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'instanceId' is set
-            if (instanceId == null)
-                throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->UpdateInstance");
-            // verify the required parameter 'updateInstanceBody' is set
-            if (updateInstanceBody == null)
-                throw new ApiException(400, "Missing required parameter 'updateInstanceBody' when calling FormInstanceManagementApi->UpdateInstance");
-
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new List<FileParameter>();
-            Object localVarPostBody = null;
-            String localVarHttpContentDisposition = string.Empty;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
-            if (updateInstanceBody != null && updateInstanceBody.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.ApiClient.Serialize(updateInstanceBody); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = updateInstanceBody; // byte array
-            }
-
-            // authentication (docusignAccessCode) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.ApiClient.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.ApiClient.Configuration.AccessToken;
-            }
-
-
-            // make the HTTP request
-            DocuSignRequest localVarRequest = this.ApiClient.PrepareRequest(localVarPath, new HttpMethod("PATCH"), localVarQueryParams.ToList(), localVarPostBody, localVarHeaderParams.ToList(), localVarFormParams.ToList(), localVarPathParams.ToList(), localVarFileParams, localVarHttpContentType, localVarHttpContentDisposition);
-            DocuSignResponse localVarResponse = await this.ApiClient.CallApiAsync(localVarRequest);
-
-            int localVarStatusCode = (int)localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("UpdateInstance", localVarResponse);
                 if (exception != null) throw exception;
             }
 

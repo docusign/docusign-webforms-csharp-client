@@ -22,9 +22,9 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// The status of the form instance
+    /// The status of Web Form Instance. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.
     /// </summary>
-    /// <value>The status of the form instance</value>
+    /// <value>The status of Web Form Instance. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

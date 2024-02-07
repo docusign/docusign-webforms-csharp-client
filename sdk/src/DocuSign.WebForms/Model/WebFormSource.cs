@@ -22,9 +22,9 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// The source from which the webform is created.
+    /// The source from which the web form is created.
     /// </summary>
-    /// <value>The source from which the webform is created.</value>
+    /// <value>The source from which the web form is created.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

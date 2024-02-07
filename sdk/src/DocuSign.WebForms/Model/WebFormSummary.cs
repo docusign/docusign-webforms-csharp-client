@@ -33,26 +33,6 @@ namespace DocuSign.WebForms.Model
         }
 
         /// <summary>
-        /// Defines FormState
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum WebFormState
-        {
-            
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-            
-            /// <summary>
-            /// Enum Draft for value: draft
-            /// </summary>
-            [EnumMember(Value = "draft")]
-            Draft = 2
-        }
-
-        /// <summary>
         /// Gets or Sets FormState
         /// </summary>
         [DataMember(Name="formState", EmitDefaultValue=false)]
@@ -60,14 +40,14 @@ namespace DocuSign.WebForms.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebFormSummary" /> class.
         /// </summary>
-        /// <param name="Id">Unique identifier for the web form.</param>
-        /// <param name="AccountId">Account identifier.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="AccountId">AccountId.</param>
         /// <param name="IsPublished">Has the form been published.</param>
         /// <param name="IsEnabled">Is the form currently enabled and available for data collection.</param>
         /// <param name="HasDraftChanges">Does the form have draft changes that need to be published?.</param>
         /// <param name="FormState">FormState.</param>
-        /// <param name="FormProperties">Form properties.</param>
-        /// <param name="FormMetadata">Form metadata.</param>
+        /// <param name="FormProperties">FormProperties.</param>
+        /// <param name="FormMetadata">FormMetadata.</param>
         public WebFormSummary(string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
         {
             this.Id = Id;
@@ -81,15 +61,13 @@ namespace DocuSign.WebForms.Model
         }
         
         /// <summary>
-        /// Unique identifier for the web form
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Unique identifier for the web form</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
         /// <summary>
-        /// Account identifier
+        /// Gets or Sets AccountId
         /// </summary>
-        /// <value>Account identifier</value>
         [DataMember(Name="accountId", EmitDefaultValue=false)]
         public string AccountId { get; set; }
         /// <summary>
@@ -111,15 +89,13 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="hasDraftChanges", EmitDefaultValue=false)]
         public bool? HasDraftChanges { get; set; }
         /// <summary>
-        /// Form properties
+        /// Gets or Sets FormProperties
         /// </summary>
-        /// <value>Form properties</value>
         [DataMember(Name="formProperties", EmitDefaultValue=false)]
         public WebFormProperties FormProperties { get; set; }
         /// <summary>
-        /// Form metadata
+        /// Gets or Sets FormMetadata
         /// </summary>
-        /// <value>Form metadata</value>
         [DataMember(Name="formMetadata", EmitDefaultValue=false)]
         public WebFormMetadata FormMetadata { get; set; }
         /// <summary>

@@ -22,37 +22,31 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// An object that fully describes an instance of a form
+    /// A list of web form instance items.
     /// </summary>
     [DataContract]
-    public partial class WebForm : WebFormSummary,  IEquatable<WebForm>, IValidatableObject
+    public partial class WebFormInstanceList :  IEquatable<WebFormInstanceList>, IValidatableObject
     {
-        public WebForm()
+        public WebFormInstanceList()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebForm" /> class.
+        /// Initializes a new instance of the <see cref="WebFormInstanceList" /> class.
         /// </summary>
-        /// <param name="VersionId">VersionId.</param>
-        /// <param name="FormContent">FormContent.</param>
-        public WebForm(int? VersionId = default(int?), WebFormContent FormContent = default(WebFormContent), string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
+        /// <param name="Items">Array of web form instance items..</param>
+        public WebFormInstanceList(List<WebFormInstance> Items = default(List<WebFormInstance>))
         {
-            this.VersionId = VersionId;
-            this.FormContent = FormContent;
+            this.Items = Items;
         }
         
         /// <summary>
-        /// Gets or Sets VersionId
+        /// Array of web form instance items.
         /// </summary>
-        [DataMember(Name="versionId", EmitDefaultValue=false)]
-        public int? VersionId { get; set; }
-        /// <summary>
-        /// Gets or Sets FormContent
-        /// </summary>
-        [DataMember(Name="formContent", EmitDefaultValue=false)]
-        public WebFormContent FormContent { get; set; }
+        /// <value>Array of web form instance items.</value>
+        [DataMember(Name="items", EmitDefaultValue=false)]
+        public List<WebFormInstance> Items { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -60,9 +54,8 @@ namespace DocuSign.WebForms.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WebForm {\n");
-            sb.Append("  VersionId: ").Append(VersionId).Append("\n");
-            sb.Append("  FormContent: ").Append(FormContent).Append("\n");
+            sb.Append("class WebFormInstanceList {\n");
+            sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -71,7 +64,7 @@ namespace DocuSign.WebForms.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public  new string ToJson()
+        public string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -84,15 +77,15 @@ namespace DocuSign.WebForms.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as WebForm);
+            return this.Equals(obj as WebFormInstanceList);
         }
 
         /// <summary>
-        /// Returns true if WebForm instances are equal
+        /// Returns true if WebFormInstanceList instances are equal
         /// </summary>
-        /// <param name="other">Instance of WebForm to be compared</param>
+        /// <param name="other">Instance of WebFormInstanceList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WebForm other)
+        public bool Equals(WebFormInstanceList other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -100,14 +93,9 @@ namespace DocuSign.WebForms.Model
 
             return 
                 (
-                    this.VersionId == other.VersionId ||
-                    this.VersionId != null &&
-                    this.VersionId.Equals(other.VersionId)
-                ) && 
-                (
-                    this.FormContent == other.FormContent ||
-                    this.FormContent != null &&
-                    this.FormContent.Equals(other.FormContent)
+                    this.Items == other.Items ||
+                    this.Items != null &&
+                    this.Items.SequenceEqual(other.Items)
                 );
         }
 
@@ -122,10 +110,8 @@ namespace DocuSign.WebForms.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.VersionId != null)
-                    hash = hash * 59 + this.VersionId.GetHashCode();
-                if (this.FormContent != null)
-                    hash = hash * 59 + this.FormContent.GetHashCode();
+                if (this.Items != null)
+                    hash = hash * 59 + this.Items.GetHashCode();
                 return hash;
             }
         }

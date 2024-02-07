@@ -22,10 +22,10 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// A collection of the published componentName and its corresponding ADM type
+    /// A collection of the published component name and its corresponding type
     /// </summary>
     [DataContract]
-    public partial class WebFormPublishedNames : Dictionary<String, WebFormAdmType>,  IEquatable<WebFormPublishedNames>, IValidatableObject
+    public partial class WebFormPublishedNames : Dictionary<String, string>,  IEquatable<WebFormPublishedNames>, IValidatableObject
     {
 
         /// <summary>

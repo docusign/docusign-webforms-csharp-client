@@ -1,3 +1,13 @@
+## [v1.0.1-rc10] - WebForms API v1.1.0-1.0.1 - 2024-02-05
+### Changed
+- Added support for version v1.1.0-1.0.1 of the DocuSign WebForms API.
+- Updated the SDK release version.
+
+## [v1.0.1-rc9] - WebForms API v1.1.0-1.0.1 - 2024-02-05
+### Changed
+- Added support for version v1.1.0-1.0.1 of the DocuSign WebForms API.
+- Updated the SDK release version.
+
 ## [v1.0.0-rc8] - WebForms API v1.1.0-1.0.0 - 2024-01-29
 ### Changed
 - Added support for version v1.1.0-1.0.0 of the DocuSign WebForms API.
