@@ -61,9 +61,7 @@ namespace DocuSign.WebForms.Model
         /// <param name="LastSenderConsentDateTime">Track the last time a user added their consent for the form..</param>
         /// <param name="PublishedSlug">The public friendly slug that is used to access the form from the player.</param>
         /// <param name="PublishedComponentNames">A dictionary containing the mapping of component names to their respective component types for all the published components..</param>
-        /// <param name="AdmModelNamespace">The namespace of a published web form. The namespace does not include version..</param>
-        /// <param name="AdmModelVersion">The namespace version of a published web form. We bump up minor version only when a form is published..</param>
-        public WebFormMetadata(WebFormSource? Source = default(WebFormSource?), WebFormUserInfo Owner = default(WebFormUserInfo), WebFormUserInfo Sender = default(WebFormUserInfo), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormContentModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormPropertiesModifiedBy = default(WebFormUserInfo), WebFormUserInfo LastPublishedBy = default(WebFormUserInfo), WebFormUserInfo LastEnabledBy = default(WebFormUserInfo), WebFormUserInfo LastDisabledBy = default(WebFormUserInfo), DateTime? ArchivedDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), DateTime? LastModifiedDateTime = default(DateTime?), DateTime? FormContentModifiedDateTime = default(DateTime?), DateTime? FormPropertiesModifiedDateTime = default(DateTime?), DateTime? LastPublishedDateTime = default(DateTime?), DateTime? LastEnabledDateTime = default(DateTime?), DateTime? LastDisabledDateTime = default(DateTime?), DateTime? LastSenderConsentDateTime = default(DateTime?), string PublishedSlug = default(string), WebFormPublishedNames PublishedComponentNames = default(WebFormPublishedNames), string AdmModelNamespace = default(string), string AdmModelVersion = default(string))
+        public WebFormMetadata(WebFormSource? Source = default(WebFormSource?), WebFormUserInfo Owner = default(WebFormUserInfo), WebFormUserInfo Sender = default(WebFormUserInfo), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormContentModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormPropertiesModifiedBy = default(WebFormUserInfo), WebFormUserInfo LastPublishedBy = default(WebFormUserInfo), WebFormUserInfo LastEnabledBy = default(WebFormUserInfo), WebFormUserInfo LastDisabledBy = default(WebFormUserInfo), DateTime? ArchivedDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), DateTime? LastModifiedDateTime = default(DateTime?), DateTime? FormContentModifiedDateTime = default(DateTime?), DateTime? FormPropertiesModifiedDateTime = default(DateTime?), DateTime? LastPublishedDateTime = default(DateTime?), DateTime? LastEnabledDateTime = default(DateTime?), DateTime? LastDisabledDateTime = default(DateTime?), DateTime? LastSenderConsentDateTime = default(DateTime?), string PublishedSlug = default(string), Dictionary<string, WebFormComponentType> PublishedComponentNames = default(Dictionary<string, WebFormComponentType>))
         {
             this.Source = Source;
             this.Owner = Owner;
@@ -85,8 +83,6 @@ namespace DocuSign.WebForms.Model
             this.LastSenderConsentDateTime = LastSenderConsentDateTime;
             this.PublishedSlug = PublishedSlug;
             this.PublishedComponentNames = PublishedComponentNames;
-            this.AdmModelNamespace = AdmModelNamespace;
-            this.AdmModelVersion = AdmModelVersion;
         }
         
         /// <summary>
@@ -202,19 +198,7 @@ namespace DocuSign.WebForms.Model
         /// </summary>
         /// <value>A dictionary containing the mapping of component names to their respective component types for all the published components.</value>
         [DataMember(Name="publishedComponentNames", EmitDefaultValue=false)]
-        public WebFormPublishedNames PublishedComponentNames { get; set; }
-        /// <summary>
-        /// The namespace of a published web form. The namespace does not include version.
-        /// </summary>
-        /// <value>The namespace of a published web form. The namespace does not include version.</value>
-        [DataMember(Name="admModelNamespace", EmitDefaultValue=false)]
-        public string AdmModelNamespace { get; set; }
-        /// <summary>
-        /// The namespace version of a published web form. We bump up minor version only when a form is published.
-        /// </summary>
-        /// <value>The namespace version of a published web form. We bump up minor version only when a form is published.</value>
-        [DataMember(Name="admModelVersion", EmitDefaultValue=false)]
-        public string AdmModelVersion { get; set; }
+        public Dictionary<string, WebFormComponentType> PublishedComponentNames { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -243,8 +227,6 @@ namespace DocuSign.WebForms.Model
             sb.Append("  LastSenderConsentDateTime: ").Append(LastSenderConsentDateTime).Append("\n");
             sb.Append("  PublishedSlug: ").Append(PublishedSlug).Append("\n");
             sb.Append("  PublishedComponentNames: ").Append(PublishedComponentNames).Append("\n");
-            sb.Append("  AdmModelNamespace: ").Append(AdmModelNamespace).Append("\n");
-            sb.Append("  AdmModelVersion: ").Append(AdmModelVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -379,17 +361,7 @@ namespace DocuSign.WebForms.Model
                 (
                     this.PublishedComponentNames == other.PublishedComponentNames ||
                     this.PublishedComponentNames != null &&
-                    this.PublishedComponentNames.Equals(other.PublishedComponentNames)
-                ) && 
-                (
-                    this.AdmModelNamespace == other.AdmModelNamespace ||
-                    this.AdmModelNamespace != null &&
-                    this.AdmModelNamespace.Equals(other.AdmModelNamespace)
-                ) && 
-                (
-                    this.AdmModelVersion == other.AdmModelVersion ||
-                    this.AdmModelVersion != null &&
-                    this.AdmModelVersion.Equals(other.AdmModelVersion)
+                    this.PublishedComponentNames.SequenceEqual(other.PublishedComponentNames)
                 );
         }
 
@@ -444,10 +416,6 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.PublishedSlug.GetHashCode();
                 if (this.PublishedComponentNames != null)
                     hash = hash * 59 + this.PublishedComponentNames.GetHashCode();
-                if (this.AdmModelNamespace != null)
-                    hash = hash * 59 + this.AdmModelNamespace.GetHashCode();
-                if (this.AdmModelVersion != null)
-                    hash = hash * 59 + this.AdmModelVersion.GetHashCode();
                 return hash;
             }
         }

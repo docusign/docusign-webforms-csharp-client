@@ -39,7 +39,7 @@ namespace DocuSign.WebForms.Model
         /// <param name="IsStandalone">IsStandalone.</param>
         /// <param name="BrandId">BrandId.</param>
         /// <param name="Templates">Optional template information that will be used to seed the form..</param>
-        public WebFormContent(WebFormComponentsMap Components = default(WebFormComponentsMap), bool? IsStandalone = default(bool?), string BrandId = default(string), List<TemplateProperties> Templates = default(List<TemplateProperties>))
+        public WebFormContent(Dictionary<string, Dictionary<string, Object>> Components = default(Dictionary<string, Dictionary<string, Object>>), bool? IsStandalone = default(bool?), string BrandId = default(string), List<TemplateProperties> Templates = default(List<TemplateProperties>))
         {
             this.Components = Components;
             this.IsStandalone = IsStandalone;
@@ -52,7 +52,7 @@ namespace DocuSign.WebForms.Model
         /// </summary>
         /// <value>Key/value dictionary of components that represent the form</value>
         [DataMember(Name="components", EmitDefaultValue=false)]
-        public WebFormComponentsMap Components { get; set; }
+        public Dictionary<string, Dictionary<string, Object>> Components { get; set; }
         /// <summary>
         /// Gets or Sets IsStandalone
         /// </summary>
@@ -120,7 +120,7 @@ namespace DocuSign.WebForms.Model
                 (
                     this.Components == other.Components ||
                     this.Components != null &&
-                    this.Components.Equals(other.Components)
+                    this.Components.SequenceEqual(other.Components)
                 ) && 
                 (
                     this.IsStandalone == other.IsStandalone ||
