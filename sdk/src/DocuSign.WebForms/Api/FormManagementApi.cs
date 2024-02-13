@@ -373,8 +373,6 @@ namespace DocuSign.WebForms.Api
             public bool? isStandalone {get; set;}
             /// Has the form been published 
             public bool? isPublished {get; set;}
-            /// The state of the form content 
-            public string state {get; set;}
             /// Sort result set in mentioned sort property:order. Default is lastModifiedDateTime:desc. Default sort is descending if not mentioned. 
             public string sortBy {get; set;}
             /// Search through form names 
@@ -443,7 +441,6 @@ namespace DocuSign.WebForms.Api
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", this.ApiClient.ParameterToString(options.userFilter)); // query parameter
                 if (options.isStandalone != null) localVarQueryParams.Add("is_standalone", this.ApiClient.ParameterToString(options.isStandalone)); // query parameter
                 if (options.isPublished != null) localVarQueryParams.Add("is_published", this.ApiClient.ParameterToString(options.isPublished)); // query parameter
-                if (options.state != null) localVarQueryParams.Add("state", this.ApiClient.ParameterToString(options.state)); // query parameter
                 if (options.sortBy != null) localVarQueryParams.Add("sort_by", this.ApiClient.ParameterToString(options.sortBy)); // query parameter
                 if (options.search != null) localVarQueryParams.Add("search", this.ApiClient.ParameterToString(options.search)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
@@ -533,7 +530,6 @@ namespace DocuSign.WebForms.Api
                 if (options.userFilter != null) localVarQueryParams.Add("user_filter", this.ApiClient.ParameterToString(options.userFilter)); // query parameter
                 if (options.isStandalone != null) localVarQueryParams.Add("is_standalone", this.ApiClient.ParameterToString(options.isStandalone)); // query parameter
                 if (options.isPublished != null) localVarQueryParams.Add("is_published", this.ApiClient.ParameterToString(options.isPublished)); // query parameter
-                if (options.state != null) localVarQueryParams.Add("state", this.ApiClient.ParameterToString(options.state)); // query parameter
                 if (options.sortBy != null) localVarQueryParams.Add("sort_by", this.ApiClient.ParameterToString(options.sortBy)); // query parameter
                 if (options.search != null) localVarQueryParams.Add("search", this.ApiClient.ParameterToString(options.search)); // query parameter
                 if (options.startPosition != null) localVarQueryParams.Add("start_position", this.ApiClient.ParameterToString(options.startPosition)); // query parameter
