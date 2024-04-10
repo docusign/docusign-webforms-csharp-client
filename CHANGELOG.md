@@ -1,6 +1,13 @@
 ## [v2.0.0-rc1] - WebForms API v1.1.0-1.0.3 - 2024-04-08
+### Breaking Changes
+- Updated C# SDK dependencies.
+    - Microsoft.CSharp: Version bumped from 4.5.0 to 4.7.0.
+    - Newtonsoft.Json: Version bumped from 13.0.1 to 13.0.3.
+    - System.ComponentModel.Annotations: Version bumped from 4.5.0 to 5.0.0.
+    - Microsoft.IdentityModel.Protocols: Version bumped from 5.4.0 to 7.3.1.
+    - System.IdentityModel.Tokens.Jwt: Version bumped from 5.4.0 to 7.3.1.
+    - BouncyCastle.Cryptography: Version bumped from 2.2.1 to 2.3.0.
 ### Changed
-- Added support for version v1.1.0-1.0.3 of the DocuSign WebForms API.
 - Updated the SDK release version.
 
 ## [v1.0.0] - WebForms API v1.1.0-1.0.2 - 2024-02-14
