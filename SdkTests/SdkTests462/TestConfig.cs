@@ -40,7 +40,7 @@ namespace SdkNetCoreTests
         public TestConfig(string integratorKey = null, string host = null, string recipientEmail = null,
             string recipientName = null, string templateRoleName = null, string templateId = null,
             string returnUrl = null)
-        {            
+        {
             string userIdFromEnv = Environment.GetEnvironmentVariable(USER_ID);
             string integratorKeyFromEnv = Environment.GetEnvironmentVariable(INTEGRATOR_KEY);
             string integratorKeyNoConsentFromEnv = Environment.GetEnvironmentVariable(INTEGRATOR_KEY_NO_CONSENT);

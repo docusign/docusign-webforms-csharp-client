@@ -314,7 +314,7 @@ namespace DocuSign.WebForms.Api
             if (createInstanceBody == null)
                 throw new ApiException(400, "Missing required parameter 'createInstanceBody' when calling FormInstanceManagementApi->CreateInstance");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -340,8 +340,8 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
             if (createInstanceBody != null && createInstanceBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(createInstanceBody); // http body (model) parameter
@@ -410,7 +410,7 @@ namespace DocuSign.WebForms.Api
             if (createInstanceBody == null)
                 throw new ApiException(400, "Missing required parameter 'createInstanceBody' when calling FormInstanceManagementApi->CreateInstance");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -436,8 +436,8 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
             if (createInstanceBody != null && createInstanceBody.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.ApiClient.Serialize(createInstanceBody); // http body (model) parameter
@@ -507,7 +507,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->GetInstance");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -533,9 +533,9 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (instanceId != null) localVarPathParams.Add("instanceId", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -596,7 +596,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->GetInstance");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -622,9 +622,9 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (instanceId != null) localVarPathParams.Add("instanceId", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -691,7 +691,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->ListInstances");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -717,8 +717,8 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
             if (options != null)
             {
                 if (options.clientUserId != null) localVarQueryParams.Add("client_user_id", this.ApiClient.ParameterToString(options.clientUserId)); // query parameter
@@ -780,7 +780,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->ListInstances");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -806,8 +806,8 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
             if (options != null)
             {
                 if (options.clientUserId != null) localVarQueryParams.Add("client_user_id", this.ApiClient.ParameterToString(options.clientUserId)); // query parameter
@@ -873,7 +873,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->RefreshToken");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}/refresh";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -899,9 +899,9 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (instanceId != null) localVarPathParams.Add("instanceId", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
             // authentication (docusignAccessCode) required
             // oauth required
@@ -962,7 +962,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->RefreshToken");
 
-            var localVarPath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}/refresh";
+            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -988,9 +988,9 @@ namespace DocuSign.WebForms.Api
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             localVarPathParams.Add("format", "json");
-            if (accountId != null) localVarPathParams.Add("account_id", this.ApiClient.ParameterToString(accountId)); // path parameter
-            if (formId != null) localVarPathParams.Add("form_id", this.ApiClient.ParameterToString(formId)); // path parameter
-            if (instanceId != null) localVarPathParams.Add("instance_id", this.ApiClient.ParameterToString(instanceId)); // path parameter
+            if (accountId != null) localVarPathParams.Add("accountId", this.ApiClient.ParameterToString(accountId)); // path parameter
+            if (formId != null) localVarPathParams.Add("formId", this.ApiClient.ParameterToString(formId)); // path parameter
+            if (instanceId != null) localVarPathParams.Add("instanceId", this.ApiClient.ParameterToString(instanceId)); // path parameter
 
             // authentication (docusignAccessCode) required
             // oauth required

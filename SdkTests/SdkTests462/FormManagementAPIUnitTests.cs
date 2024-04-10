@@ -117,10 +117,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = _testConfig.AccountId;
             string formId = _formId;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             //Act
             var apiResponse = _mgmtApi.GetFormWithHttpInfo(accountId, formId, options);
@@ -136,10 +133,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = _testConfig.AccountId;
             string formId = null;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             try
             {
@@ -160,10 +154,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = null;
             string formId = _formId;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             try
             {
@@ -187,10 +178,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = _testConfig.AccountId;
             string formId = _formId;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             //Act
             var apiResponse = await _mgmtApi.GetFormAsyncWithHttpInfo(accountId, formId, options);
@@ -206,10 +194,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = _testConfig.AccountId;
             string formId = null;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             try
             {
@@ -230,10 +215,7 @@ namespace SdkNetCoreTests
             //Arrange
             string accountId = null;
             string formId = _formId;
-            GetFormOptions options = new GetFormOptions()
-            {
-                state = "active"
-            };
+            GetFormOptions options = new GetFormOptions() { state = "active" };
 
             try
             {
