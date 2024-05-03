@@ -1,3 +1,6 @@
+## [v2.0.0-rc2] - WebForms API v1.1.0-1.0.3 - 2024-04-29
+### Breaking Changes
+- Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
 ## [v2.0.0-rc1] - WebForms API v1.1.0-1.0.3 - 2024-04-08
 ### Breaking Changes
 - Updated C# SDK dependencies.
