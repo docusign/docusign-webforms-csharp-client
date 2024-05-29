@@ -1,3 +1,9 @@
+## [v2.0.0-rc3] - WebForms API v1.1.0-1.0.3 - 2024-05-20
+### Changed
+- Updated C# SDK dependencies.
+    - BouncyCastle.Cryptography: Version bumped from 2.3.0 to 2.3.1.
+    - Microsoft.IdentityModel.JsonWebTokens: Version bumped from 7.5.1 to 7.5.2.
+
 ## [v2.0.0-rc2] - WebForms API v1.1.0-1.0.3 - 2024-04-29
 ### Breaking Changes
 - Updated from System.IdentityModel.Tokens.Jwt to Microsoft.IdentityModel.JsonWebTokens for token handling.
