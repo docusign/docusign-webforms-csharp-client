@@ -7,7 +7,7 @@
     <Description>The Docusign NuGet package makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-webforms-csharp-client repository.</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © DocuSign 2024</Copyright>
+    <Copyright>Copyright © Docusign 2024</Copyright>
     <AssemblyTitle>DocuSign.WebForms</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -16,17 +16,17 @@
     <RootNamespace>DocuSign.WebForms</RootNamespace>
     <AssemblyName>DocuSign.WebForms</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>2.0.0-rc3</VersionPrefix>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageTags>DocuSign.WebForms;REST;WebForms;docusign;WebForms;api</PackageTags>
-    <PackageIconUrl>https://s.gravatar.com/avatar/4a8c033df6baa902f730d514d5574c33</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/docusign/docusign-csharp-client</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/docusign/docusign-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
-    <RepositoryUrl>https://github.com/docusign/docusign-csharp-client</RepositoryUrl>
+    <PackageTags>Docusign.WebForms;REST;WebForms;docusign;WebForms;api</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/docusign/docusign-webforms-csharp-client</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/docusign/docusign-webforms-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/docusign/docusign-webforms-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v2.0.0-rc3] - WebForms API v1.1.0-1.0.3 - 5/20/2024</PackageReleaseNotes>
+    <PackageReleaseNotes>[v2.0.0] - WebForms API v1.1.0-1.0.3 - 7/30/2024</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
