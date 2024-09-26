@@ -38,22 +38,28 @@ namespace DocuSign.WebForms.Model
         INITIATED = 1,
         
         /// <summary>
+        /// Enum INPROGRESS for value: IN_PROGRESS
+        /// </summary>
+        [EnumMember(Value = "IN_PROGRESS")]
+        INPROGRESS = 2,
+        
+        /// <summary>
         /// Enum SUBMITTED for value: SUBMITTED
         /// </summary>
         [EnumMember(Value = "SUBMITTED")]
-        SUBMITTED = 2,
+        SUBMITTED = 3,
         
         /// <summary>
         /// Enum EXPIRED for value: EXPIRED
         /// </summary>
         [EnumMember(Value = "EXPIRED")]
-        EXPIRED = 3,
+        EXPIRED = 4,
         
         /// <summary>
         /// Enum FAILED for value: FAILED
         /// </summary>
         [EnumMember(Value = "FAILED")]
-        FAILED = 4
+        FAILED = 5
     }
 
 }

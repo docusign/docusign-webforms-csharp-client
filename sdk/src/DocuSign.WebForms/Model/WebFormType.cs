@@ -22,32 +22,26 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// The source from which the web form is created.
+    /// The field indicates webform type.
     /// </summary>
-    /// <value>The source from which the web form is created.</value>
+    /// <value>The field indicates webform type.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum WebFormSource
+    public enum WebFormType
     {
         
         /// <summary>
-        /// Enum Templates for value: templates
+        /// Enum Standalone for value: standalone
         /// </summary>
-        [EnumMember(Value = "templates")]
-        Templates = 1,
+        [EnumMember(Value = "standalone")]
+        Standalone = 1,
         
         /// <summary>
-        /// Enum Blank for value: blank
+        /// Enum HasEsignTemplate for value: hasEsignTemplate
         /// </summary>
-        [EnumMember(Value = "blank")]
-        Blank = 2,
-        
-        /// <summary>
-        /// Enum Form for value: form
-        /// </summary>
-        [EnumMember(Value = "form")]
-        Form = 3
+        [EnumMember(Value = "hasEsignTemplate")]
+        HasEsignTemplate = 2
     }
 
 }

@@ -37,7 +37,7 @@ namespace DocuSign.WebForms.Model
         /// </summary>
         /// <param name="VersionId">VersionId.</param>
         /// <param name="FormContent">FormContent.</param>
-        public WebForm(int? VersionId = default(int?), WebFormContent FormContent = default(WebFormContent), string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
+        public WebForm(int? VersionId = default(int?), WebFormContent FormContent = default(WebFormContent), string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? IsUploaded = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
         {
             this.VersionId = VersionId;
             this.FormContent = FormContent;

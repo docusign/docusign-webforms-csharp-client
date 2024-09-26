@@ -53,7 +53,13 @@ namespace DocuSign.WebForms.Model
         /// Enum UIREMOTE for value: UI_REMOTE
         /// </summary>
         [EnumMember(Value = "UI_REMOTE")]
-        UIREMOTE = 4
+        UIREMOTE = 4,
+        
+        /// <summary>
+        /// Enum WORKFLOW for value: WORKFLOW
+        /// </summary>
+        [EnumMember(Value = "WORKFLOW")]
+        WORKFLOW = 5
     }
 
 }

@@ -22,14 +22,14 @@ namespace DocuSign.WebForms.Client
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://apps-d.docusign.com/api/webforms/v1.1).
+        /// with default configuration and base path (https://apps-d.docusign.com/api/webforms).
         /// </summary>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient() instead.", false)]
         public ApiClient() : base() { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://apps-d.docusign.com/api/webforms/v1.1).
+        /// with default base path (https://apps-d.docusign.com/api/webforms).
         /// </summary>
         /// <param name="configuration">An instance of Configuration.</param>
         [Obsolete("ApiClient is now obsolete and will be removed in a future release. Use DocuSignClient(Configuration) instead.", false)]

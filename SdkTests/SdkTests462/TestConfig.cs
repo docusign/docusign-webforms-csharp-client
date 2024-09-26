@@ -54,7 +54,7 @@ namespace SdkNetCoreTests
             this.IntegratorKeyNoConsent = integratorKeyNoConsentFromEnv;
             this.TemplateId = templateId ?? templateIdFromEnv;
             this.BrandId = brandIdFromEnv;
-            this.Host = host ?? "https://demo.services.docusign.net/webforms/v1.1";
+            this.Host = host ?? "https://demo.services.docusign.net/webforms";
             this.RecipientEmail = recipientEmail ?? "docusignsdktest@mailinator.com";
             this.RecipientName = recipientName ?? "Pat Developer";
             this.TemplateRoleName = templateRoleName ?? "bob";

@@ -44,16 +44,18 @@ namespace DocuSign.WebForms.Model
         /// <param name="AccountId">AccountId.</param>
         /// <param name="IsPublished">Has the form been published.</param>
         /// <param name="IsEnabled">Is the form currently enabled and available for data collection.</param>
+        /// <param name="IsUploaded">Has the form created through upload.</param>
         /// <param name="HasDraftChanges">Does the form have draft changes that need to be published?.</param>
         /// <param name="FormState">FormState.</param>
         /// <param name="FormProperties">FormProperties.</param>
         /// <param name="FormMetadata">FormMetadata.</param>
-        public WebFormSummary(string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
+        public WebFormSummary(string Id = default(string), string AccountId = default(string), bool? IsPublished = default(bool?), bool? IsEnabled = default(bool?), bool? IsUploaded = default(bool?), bool? HasDraftChanges = default(bool?), WebFormState? FormState = default(WebFormState?), WebFormProperties FormProperties = default(WebFormProperties), WebFormMetadata FormMetadata = default(WebFormMetadata))
         {
             this.Id = Id;
             this.AccountId = AccountId;
             this.IsPublished = IsPublished;
             this.IsEnabled = IsEnabled;
+            this.IsUploaded = IsUploaded;
             this.HasDraftChanges = HasDraftChanges;
             this.FormState = FormState;
             this.FormProperties = FormProperties;
@@ -83,6 +85,12 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="isEnabled", EmitDefaultValue=false)]
         public bool? IsEnabled { get; set; }
         /// <summary>
+        /// Has the form created through upload
+        /// </summary>
+        /// <value>Has the form created through upload</value>
+        [DataMember(Name="isUploaded", EmitDefaultValue=false)]
+        public bool? IsUploaded { get; set; }
+        /// <summary>
         /// Does the form have draft changes that need to be published?
         /// </summary>
         /// <value>Does the form have draft changes that need to be published?</value>
@@ -110,6 +118,7 @@ namespace DocuSign.WebForms.Model
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  IsPublished: ").Append(IsPublished).Append("\n");
             sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("  IsUploaded: ").Append(IsUploaded).Append("\n");
             sb.Append("  HasDraftChanges: ").Append(HasDraftChanges).Append("\n");
             sb.Append("  FormState: ").Append(FormState).Append("\n");
             sb.Append("  FormProperties: ").Append(FormProperties).Append("\n");
@@ -171,6 +180,11 @@ namespace DocuSign.WebForms.Model
                     this.IsEnabled.Equals(other.IsEnabled)
                 ) && 
                 (
+                    this.IsUploaded == other.IsUploaded ||
+                    this.IsUploaded != null &&
+                    this.IsUploaded.Equals(other.IsUploaded)
+                ) && 
+                (
                     this.HasDraftChanges == other.HasDraftChanges ||
                     this.HasDraftChanges != null &&
                     this.HasDraftChanges.Equals(other.HasDraftChanges)
@@ -211,6 +225,8 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.IsPublished.GetHashCode();
                 if (this.IsEnabled != null)
                     hash = hash * 59 + this.IsEnabled.GetHashCode();
+                if (this.IsUploaded != null)
+                    hash = hash * 59 + this.IsUploaded.GetHashCode();
                 if (this.HasDraftChanges != null)
                     hash = hash * 59 + this.HasDraftChanges.GetHashCode();
                 if (this.FormState != null)

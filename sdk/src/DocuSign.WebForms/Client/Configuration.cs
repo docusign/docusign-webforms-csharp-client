@@ -26,7 +26,7 @@ namespace DocuSign.WebForms.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "2.0.0";
+        public const string Version = "3.0.0-rc1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -115,10 +115,10 @@ namespace DocuSign.WebForms.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        public Configuration(string basePath = "https://apps-d.docusign.com/api/webforms/v1.1")
+        public Configuration(string basePath = "https://apps-d.docusign.com/api/webforms")
         {
             UserAgent = $"Swagger-Codegen/1.1.0/{Version}/C#/{_getFrameworkVersion()}";
-            BasePath = basePath ?? "https://apps-d.docusign.com/api/webforms/v1.1";
+            BasePath = basePath ?? "https://apps-d.docusign.com/api/webforms";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
