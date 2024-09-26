@@ -215,7 +215,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormManagementApi->GetForm");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -304,7 +304,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormManagementApi->GetForm");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -409,7 +409,7 @@ namespace DocuSign.WebForms.Api
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling FormManagementApi->ListForms");
 
-            var localVarPath = "/accounts/{accountId}/forms";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -498,7 +498,7 @@ namespace DocuSign.WebForms.Api
             if (accountId == null)
                 throw new ApiException(400, "Missing required parameter 'accountId' when calling FormManagementApi->ListForms");
 
-            var localVarPath = "/accounts/{accountId}/forms";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);

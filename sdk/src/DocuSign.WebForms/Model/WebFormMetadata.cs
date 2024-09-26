@@ -33,15 +33,23 @@ namespace DocuSign.WebForms.Model
         }
 
         /// <summary>
-        /// The source from which the webform is created. Accepted values are [upload, templates, blank]
+        /// The source from which the webform is created. Accepted values are [templates, blank, form]
         /// </summary>
-        /// <value>The source from which the webform is created. Accepted values are [upload, templates, blank]</value>
+        /// <value>The source from which the webform is created. Accepted values are [templates, blank, form]</value>
         [DataMember(Name="source", EmitDefaultValue=false)]
         public WebFormSource? Source { get; set; }
         /// <summary>
+        /// Represents webform type. Possible values are [standalone, hasEsignTemplate]
+        /// </summary>
+        /// <value>Represents webform type. Possible values are [standalone, hasEsignTemplate]</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public WebFormType? Type { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WebFormMetadata" /> class.
         /// </summary>
-        /// <param name="Source">The source from which the webform is created. Accepted values are [upload, templates, blank].</param>
+        /// <param name="Source">The source from which the webform is created. Accepted values are [templates, blank, form].</param>
+        /// <param name="Type">Represents webform type. Possible values are [standalone, hasEsignTemplate].</param>
+        /// <param name="SourceFormId">The source form id from which the webform is created..</param>
         /// <param name="Owner">The user that created the form or has been transferred ownership.</param>
         /// <param name="Sender">The user that has added their consent to the form for sending actions.</param>
         /// <param name="LastModifiedBy">Track the user that last modified anything related to the form.</param>
@@ -61,9 +69,11 @@ namespace DocuSign.WebForms.Model
         /// <param name="LastSenderConsentDateTime">Track the last time a user added their consent for the form..</param>
         /// <param name="PublishedSlug">The public friendly slug that is used to access the form from the player.</param>
         /// <param name="PublishedComponentNames">A dictionary containing the mapping of component names to their respective component types for all the published components..</param>
-        public WebFormMetadata(WebFormSource? Source = default(WebFormSource?), WebFormUserInfo Owner = default(WebFormUserInfo), WebFormUserInfo Sender = default(WebFormUserInfo), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormContentModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormPropertiesModifiedBy = default(WebFormUserInfo), WebFormUserInfo LastPublishedBy = default(WebFormUserInfo), WebFormUserInfo LastEnabledBy = default(WebFormUserInfo), WebFormUserInfo LastDisabledBy = default(WebFormUserInfo), DateTime? ArchivedDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), DateTime? LastModifiedDateTime = default(DateTime?), DateTime? FormContentModifiedDateTime = default(DateTime?), DateTime? FormPropertiesModifiedDateTime = default(DateTime?), DateTime? LastPublishedDateTime = default(DateTime?), DateTime? LastEnabledDateTime = default(DateTime?), DateTime? LastDisabledDateTime = default(DateTime?), DateTime? LastSenderConsentDateTime = default(DateTime?), string PublishedSlug = default(string), Dictionary<string, WebFormComponentType> PublishedComponentNames = default(Dictionary<string, WebFormComponentType>))
+        public WebFormMetadata(WebFormSource? Source = default(WebFormSource?), WebFormType? Type = default(WebFormType?), string SourceFormId = default(string), WebFormUserInfo Owner = default(WebFormUserInfo), WebFormUserInfo Sender = default(WebFormUserInfo), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormContentModifiedBy = default(WebFormUserInfo), WebFormUserInfo FormPropertiesModifiedBy = default(WebFormUserInfo), WebFormUserInfo LastPublishedBy = default(WebFormUserInfo), WebFormUserInfo LastEnabledBy = default(WebFormUserInfo), WebFormUserInfo LastDisabledBy = default(WebFormUserInfo), DateTime? ArchivedDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), DateTime? LastModifiedDateTime = default(DateTime?), DateTime? FormContentModifiedDateTime = default(DateTime?), DateTime? FormPropertiesModifiedDateTime = default(DateTime?), DateTime? LastPublishedDateTime = default(DateTime?), DateTime? LastEnabledDateTime = default(DateTime?), DateTime? LastDisabledDateTime = default(DateTime?), DateTime? LastSenderConsentDateTime = default(DateTime?), string PublishedSlug = default(string), Dictionary<string, WebFormComponentType> PublishedComponentNames = default(Dictionary<string, WebFormComponentType>))
         {
             this.Source = Source;
+            this.Type = Type;
+            this.SourceFormId = SourceFormId;
             this.Owner = Owner;
             this.Sender = Sender;
             this.LastModifiedBy = LastModifiedBy;
@@ -85,6 +95,12 @@ namespace DocuSign.WebForms.Model
             this.PublishedComponentNames = PublishedComponentNames;
         }
         
+        /// <summary>
+        /// The source form id from which the webform is created.
+        /// </summary>
+        /// <value>The source form id from which the webform is created.</value>
+        [DataMember(Name="sourceFormId", EmitDefaultValue=false)]
+        public string SourceFormId { get; set; }
         /// <summary>
         /// The user that created the form or has been transferred ownership
         /// </summary>
@@ -208,6 +224,8 @@ namespace DocuSign.WebForms.Model
             var sb = new StringBuilder();
             sb.Append("class WebFormMetadata {\n");
             sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  SourceFormId: ").Append(SourceFormId).Append("\n");
             sb.Append("  Owner: ").Append(Owner).Append("\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  LastModifiedBy: ").Append(LastModifiedBy).Append("\n");
@@ -267,6 +285,16 @@ namespace DocuSign.WebForms.Model
                     this.Source == other.Source ||
                     this.Source != null &&
                     this.Source.Equals(other.Source)
+                ) && 
+                (
+                    this.Type == other.Type ||
+                    this.Type != null &&
+                    this.Type.Equals(other.Type)
+                ) && 
+                (
+                    this.SourceFormId == other.SourceFormId ||
+                    this.SourceFormId != null &&
+                    this.SourceFormId.Equals(other.SourceFormId)
                 ) && 
                 (
                     this.Owner == other.Owner ||
@@ -378,6 +406,10 @@ namespace DocuSign.WebForms.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Source != null)
                     hash = hash * 59 + this.Source.GetHashCode();
+                if (this.Type != null)
+                    hash = hash * 59 + this.Type.GetHashCode();
+                if (this.SourceFormId != null)
+                    hash = hash * 59 + this.SourceFormId.GetHashCode();
                 if (this.Owner != null)
                     hash = hash * 59 + this.Owner.GetHashCode();
                 if (this.Sender != null)

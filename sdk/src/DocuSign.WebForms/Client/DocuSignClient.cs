@@ -40,11 +40,9 @@ namespace DocuSign.WebForms.Client
     {
         // Rest API base path constants
         // Live/Production base path
-        public const string Production_REST_BasePath = "https://us.services.docusign.net/webforms/v1.1";
+        public const string Production_REST_BasePath = "https://us.services.docusign.net/webforms";
         // Sandbox/Demo base path 
-        public const string Demo_REST_BasePath = "https://apps-d.docusign.com/api/webforms/v1.1";
-        // Stage base path
-        public const string Stage_REST_BasePath = "https://apps-s.docusign.com/api/webforms/v1.1";
+        public const string Demo_REST_BasePath = "https://apps-d.docusign.com/api/webforms";
 
         protected string basePath = Demo_REST_BasePath;
 
@@ -82,7 +80,7 @@ namespace DocuSign.WebForms.Client
 
         /// <summary>
         /// Initializes a new instance of <see cref="DocuSignClient"/> with default
-        /// with default base path (https://apps-d.docusign.com/api/webforms/v1.1).
+        /// with default base path (https://apps-d.docusign.com/api/webforms).
         /// </summary>
         public DocuSignClient()
         {
@@ -98,7 +96,7 @@ namespace DocuSign.WebForms.Client
 
         /// <summary>
         /// Initializes a new instance of <see cref="DocuSignClient"/> using
-        /// the provided configuration with the default base path (https://apps-d.docusign.com/api/webforms/v1.1).
+        /// the provided configuration with the default base path (https://apps-d.docusign.com/api/webforms).
         /// </summary>
         /// <param name="configuration">Provided pre-populated <see cref="Configuration"/> object</param>
         public DocuSignClient(Configuration configuration)
@@ -724,10 +722,6 @@ namespace DocuSign.WebForms.Client
                 {
                     this.oAuthBasePath = OAuth.Demo_OAuth_BasePath;
                 }
-                else if (baseUri.Host.StartsWith("apps-s") || baseUri.Host.StartsWith("stage"))
-                {
-                    this.oAuthBasePath = OAuth.Stage_OAuth_BasePath;
-                }
                 else
                 {
                     this.oAuthBasePath = OAuth.Production_OAuth_BasePath;
@@ -913,7 +907,7 @@ namespace DocuSign.WebForms.Client
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyStream">The Stream of the RSA private key</param>
@@ -935,7 +929,7 @@ namespace DocuSign.WebForms.Client
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyStream">The Stream of the RSA private key</param>
@@ -965,7 +959,7 @@ namespace DocuSign.WebForms.Client
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
@@ -987,7 +981,7 @@ namespace DocuSign.WebForms.Client
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="userId">Docusign user Id to be impersonated(This is a UUID)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
@@ -1068,7 +1062,7 @@ namespace DocuSign.WebForms.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>
@@ -1088,7 +1082,7 @@ namespace DocuSign.WebForms.Client
         /// </summary>
         /// <param name="clientId">Docusign OAuth Client Id(AKA Integrator Key)</param>
         /// <param name="oauthBasePath"> Docusign OAuth base path
-        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/> <see cref="OAuth.Stage_OAuth_BasePath"/>
+        /// <see cref="OAuth.Demo_OAuth_BasePath"/> <see cref="OAuth.Production_OAuth_BasePath"/>
         /// <seealso cref="GetOAuthBasePath()" /> <seealso cref="SetOAuthBasePath(string)"/>
         /// </param>
         /// <param name="privateKeyBytes">The byte contents of the RSA private key</param>

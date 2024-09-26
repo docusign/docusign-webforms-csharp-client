@@ -314,7 +314,7 @@ namespace DocuSign.WebForms.Api
             if (createInstanceBody == null)
                 throw new ApiException(400, "Missing required parameter 'createInstanceBody' when calling FormInstanceManagementApi->CreateInstance");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -410,7 +410,7 @@ namespace DocuSign.WebForms.Api
             if (createInstanceBody == null)
                 throw new ApiException(400, "Missing required parameter 'createInstanceBody' when calling FormInstanceManagementApi->CreateInstance");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -507,7 +507,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->GetInstance");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -596,7 +596,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->GetInstance");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -691,7 +691,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->ListInstances");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -780,7 +780,7 @@ namespace DocuSign.WebForms.Api
             if (formId == null)
                 throw new ApiException(400, "Missing required parameter 'formId' when calling FormInstanceManagementApi->ListInstances");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -873,7 +873,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->RefreshToken");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
@@ -962,7 +962,7 @@ namespace DocuSign.WebForms.Api
             if (instanceId == null)
                 throw new ApiException(400, "Missing required parameter 'instanceId' when calling FormInstanceManagementApi->RefreshToken");
 
-            var localVarPath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
+            var localVarPath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(this.ApiClient.Configuration.DefaultHeader);
