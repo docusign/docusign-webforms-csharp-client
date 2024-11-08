@@ -1,3 +1,8 @@
+## [v3.0.1] - WebForms API v1.1.0-1.0.4 - 2024-11-07
+### Changed
+- Fixed Deadlock issue with UI Apps (E.g. WinForms).
+- Updated the SDK release version.
+
 ## [v3.0.0] - WebForms API v1.1.0-1.0.4 - 2024-11-05
 ### Changed
 - Added support for version v1.1.0-1.0.4 of the DocuSign WebForms API.
