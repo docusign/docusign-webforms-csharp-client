@@ -14,7 +14,7 @@ namespace SdkNetCoreTests.Helpers
             TestConfig config = new TestConfig();
             config.ApiClient = new DocuSignClient(config.Host);
             byte[] privateKeyStream = config.PrivateKey;
-            var scopes = new List<string> { OAuth.Scope_SIGNATURE, OAuth.Scope_IMPERSONATION, "webforms_read", "webforms_write", "webforms_instance_read", "webforms_instance_write" };
+            var scopes = new List<string> { OAuth.Scope_SIGNATURE, OAuth.Scope_IMPERSONATION, "webforms_read", "webforms_instance_read", "webforms_instance_write" };
 
             OAuth.OAuthToken tokenInfo = config.ApiClient.RequestJWTUserToken(
                   config.IntegratorKey,

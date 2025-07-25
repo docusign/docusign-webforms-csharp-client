@@ -38,35 +38,36 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="authenticationMethod", EmitDefaultValue=false)]
         public AuthenticationMethod? AuthenticationMethod { get; set; }
         /// <summary>
+        /// Gets or Sets SendOption
+        /// </summary>
+        [DataMember(Name="sendOption", EmitDefaultValue=false)]
+        public SendOption? SendOption { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateInstanceRequestBody" /> class.
         /// </summary>
         /// <param name="FormValues">FormValues.</param>
-        /// <param name="ClientUserId">ClientUserId (required).</param>
+        /// <param name="ClientUserId">ClientUserId.</param>
         /// <param name="AuthenticationInstant">AuthenticationInstant.</param>
         /// <param name="AuthenticationMethod">AuthenticationMethod.</param>
         /// <param name="AssertionId">AssertionId.</param>
         /// <param name="SecurityDomain">SecurityDomain.</param>
         /// <param name="ReturnUrl">ReturnUrl.</param>
         /// <param name="ExpirationOffset">ExpirationOffset.</param>
+        /// <param name="SendOption">SendOption.</param>
+        /// <param name="Recipients">The recipients who will receive the form in email.</param>
         /// <param name="Tags">List of tags provided by the user with each request. This field is optional..</param>
-        public CreateInstanceRequestBody(WebFormValues FormValues = default(WebFormValues), string ClientUserId = default(string), string AuthenticationInstant = default(string), AuthenticationMethod? AuthenticationMethod = default(AuthenticationMethod?), string AssertionId = default(string), string SecurityDomain = default(string), string ReturnUrl = default(string), long? ExpirationOffset = default(long?), List<string> Tags = default(List<string>))
+        public CreateInstanceRequestBody(WebFormValues FormValues = default(WebFormValues), string ClientUserId = default(string), string AuthenticationInstant = default(string), AuthenticationMethod? AuthenticationMethod = default(AuthenticationMethod?), string AssertionId = default(string), string SecurityDomain = default(string), string ReturnUrl = default(string), long? ExpirationOffset = default(long?), SendOption? SendOption = default(SendOption?), List<CreateInstanceRequestBodyRecipients> Recipients = default(List<CreateInstanceRequestBodyRecipients>), List<string> Tags = default(List<string>))
         {
-            // to ensure "ClientUserId" is required (not null)
-            if (ClientUserId == null)
-            {
-                throw new InvalidDataException("ClientUserId is a required property for CreateInstanceRequestBody and cannot be null");
-            }
-            else
-            {
-                this.ClientUserId = ClientUserId;
-            }
             this.FormValues = FormValues;
+            this.ClientUserId = ClientUserId;
             this.AuthenticationInstant = AuthenticationInstant;
             this.AuthenticationMethod = AuthenticationMethod;
             this.AssertionId = AssertionId;
             this.SecurityDomain = SecurityDomain;
             this.ReturnUrl = ReturnUrl;
             this.ExpirationOffset = ExpirationOffset;
+            this.SendOption = SendOption;
+            this.Recipients = Recipients;
             this.Tags = Tags;
         }
         
@@ -106,6 +107,12 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="expirationOffset", EmitDefaultValue=false)]
         public long? ExpirationOffset { get; set; }
         /// <summary>
+        /// The recipients who will receive the form in email
+        /// </summary>
+        /// <value>The recipients who will receive the form in email</value>
+        [DataMember(Name="recipients", EmitDefaultValue=false)]
+        public List<CreateInstanceRequestBodyRecipients> Recipients { get; set; }
+        /// <summary>
         /// List of tags provided by the user with each request. This field is optional.
         /// </summary>
         /// <value>List of tags provided by the user with each request. This field is optional.</value>
@@ -127,6 +134,8 @@ namespace DocuSign.WebForms.Model
             sb.Append("  SecurityDomain: ").Append(SecurityDomain).Append("\n");
             sb.Append("  ReturnUrl: ").Append(ReturnUrl).Append("\n");
             sb.Append("  ExpirationOffset: ").Append(ExpirationOffset).Append("\n");
+            sb.Append("  SendOption: ").Append(SendOption).Append("\n");
+            sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -205,6 +214,16 @@ namespace DocuSign.WebForms.Model
                     this.ExpirationOffset.Equals(other.ExpirationOffset)
                 ) && 
                 (
+                    this.SendOption == other.SendOption ||
+                    this.SendOption != null &&
+                    this.SendOption.Equals(other.SendOption)
+                ) && 
+                (
+                    this.Recipients == other.Recipients ||
+                    this.Recipients != null &&
+                    this.Recipients.SequenceEqual(other.Recipients)
+                ) && 
+                (
                     this.Tags == other.Tags ||
                     this.Tags != null &&
                     this.Tags.SequenceEqual(other.Tags)
@@ -238,6 +257,10 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.ReturnUrl.GetHashCode();
                 if (this.ExpirationOffset != null)
                     hash = hash * 59 + this.ExpirationOffset.GetHashCode();
+                if (this.SendOption != null)
+                    hash = hash * 59 + this.SendOption.GetHashCode();
+                if (this.Recipients != null)
+                    hash = hash * 59 + this.Recipients.GetHashCode();
                 if (this.Tags != null)
                     hash = hash * 59 + this.Tags.GetHashCode();
                 return hash;

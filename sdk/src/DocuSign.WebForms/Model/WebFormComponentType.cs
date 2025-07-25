@@ -71,7 +71,13 @@ namespace DocuSign.WebForms.Model
         /// Enum TextBox for value: TextBox
         /// </summary>
         [EnumMember(Value = "TextBox")]
-        TextBox = 7
+        TextBox = 7,
+        
+        /// <summary>
+        /// Enum FileInput for value: FileInput
+        /// </summary>
+        [EnumMember(Value = "FileInput")]
+        FileInput = 8
     }
 
 }
