@@ -22,38 +22,37 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// WebFormInstanceEnvelopes
+    /// WebFormInstanceRecipients
     /// </summary>
     [DataContract]
-    public partial class WebFormInstanceEnvelopes :  IEquatable<WebFormInstanceEnvelopes>, IValidatableObject
+    public partial class WebFormInstanceRecipients :  IEquatable<WebFormInstanceRecipients>, IValidatableObject
     {
-        public WebFormInstanceEnvelopes()
+        public WebFormInstanceRecipients()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebFormInstanceEnvelopes" /> class.
+        /// Gets or Sets InstanceRecipientStatus
         /// </summary>
-        /// <param name="Id">Id.</param>
-        /// <param name="CreatedDateTime">The dateTime when an envelope is created..</param>
-        public WebFormInstanceEnvelopes(string Id = default(string), DateTime? CreatedDateTime = default(DateTime?))
+        [DataMember(Name="instanceRecipientStatus", EmitDefaultValue=false)]
+        public InstanceRecipientStatus? InstanceRecipientStatus { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebFormInstanceRecipients" /> class.
+        /// </summary>
+        /// <param name="RecipientViewId">RecipientViewId.</param>
+        /// <param name="InstanceRecipientStatus">InstanceRecipientStatus.</param>
+        public WebFormInstanceRecipients(string RecipientViewId = default(string), InstanceRecipientStatus? InstanceRecipientStatus = default(InstanceRecipientStatus?))
         {
-            this.Id = Id;
-            this.CreatedDateTime = CreatedDateTime;
+            this.RecipientViewId = RecipientViewId;
+            this.InstanceRecipientStatus = InstanceRecipientStatus;
         }
         
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets RecipientViewId
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
-        /// <summary>
-        /// The dateTime when an envelope is created.
-        /// </summary>
-        /// <value>The dateTime when an envelope is created.</value>
-        [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
-        public DateTime? CreatedDateTime { get; set; }
+        [DataMember(Name="recipientViewId", EmitDefaultValue=false)]
+        public string RecipientViewId { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -61,9 +60,9 @@ namespace DocuSign.WebForms.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WebFormInstanceEnvelopes {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
+            sb.Append("class WebFormInstanceRecipients {\n");
+            sb.Append("  RecipientViewId: ").Append(RecipientViewId).Append("\n");
+            sb.Append("  InstanceRecipientStatus: ").Append(InstanceRecipientStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,15 +84,15 @@ namespace DocuSign.WebForms.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as WebFormInstanceEnvelopes);
+            return this.Equals(obj as WebFormInstanceRecipients);
         }
 
         /// <summary>
-        /// Returns true if WebFormInstanceEnvelopes instances are equal
+        /// Returns true if WebFormInstanceRecipients instances are equal
         /// </summary>
-        /// <param name="other">Instance of WebFormInstanceEnvelopes to be compared</param>
+        /// <param name="other">Instance of WebFormInstanceRecipients to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WebFormInstanceEnvelopes other)
+        public bool Equals(WebFormInstanceRecipients other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -101,14 +100,14 @@ namespace DocuSign.WebForms.Model
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.RecipientViewId == other.RecipientViewId ||
+                    this.RecipientViewId != null &&
+                    this.RecipientViewId.Equals(other.RecipientViewId)
                 ) && 
                 (
-                    this.CreatedDateTime == other.CreatedDateTime ||
-                    this.CreatedDateTime != null &&
-                    this.CreatedDateTime.Equals(other.CreatedDateTime)
+                    this.InstanceRecipientStatus == other.InstanceRecipientStatus ||
+                    this.InstanceRecipientStatus != null &&
+                    this.InstanceRecipientStatus.Equals(other.InstanceRecipientStatus)
                 );
         }
 
@@ -123,10 +122,10 @@ namespace DocuSign.WebForms.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
-                if (this.CreatedDateTime != null)
-                    hash = hash * 59 + this.CreatedDateTime.GetHashCode();
+                if (this.RecipientViewId != null)
+                    hash = hash * 59 + this.RecipientViewId.GetHashCode();
+                if (this.InstanceRecipientStatus != null)
+                    hash = hash * 59 + this.InstanceRecipientStatus.GetHashCode();
                 return hash;
             }
         }

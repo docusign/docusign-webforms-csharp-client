@@ -18,7 +18,7 @@ namespace SdkNetCoreTests
 
             byte[] privateKeyStream = testConfig.PrivateKey;
 
-            var scopes = new List<string> { OAuth.Scope_IMPERSONATION, OAuth.Scope_SIGNATURE, "webforms_read", "webforms_write", "webforms_instance_read", "webforms_instance_write" };
+            var scopes = new List<string> { OAuth.Scope_IMPERSONATION, OAuth.Scope_SIGNATURE, "webforms_read", "webforms_instance_read", "webforms_instance_write" };
 
             OAuth.OAuthToken tokenInfo = testConfig.ApiClient.RequestJWTUserToken(
                 testConfig.IntegratorKey,

@@ -33,6 +33,11 @@ namespace DocuSign.WebForms.Model
         }
 
         /// <summary>
+        /// Gets or Sets InstanceSource
+        /// </summary>
+        [DataMember(Name="instanceSource", EmitDefaultValue=false)]
+        public InstanceSource? InstanceSource { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WebFormInstanceMetadata" /> class.
         /// </summary>
         /// <param name="ExpirationDateTime">ExpirationDateTime (required).</param>
@@ -40,7 +45,9 @@ namespace DocuSign.WebForms.Model
         /// <param name="CreatedBy">The user that created the Web Form Instance (required).</param>
         /// <param name="LastModifiedDateTime">LastModifiedDateTime.</param>
         /// <param name="LastModifiedBy">The user that last modified the Web Form Instance.</param>
-        public WebFormInstanceMetadata(DateTime? ExpirationDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), WebFormUserInfo CreatedBy = default(WebFormUserInfo), DateTime? LastModifiedDateTime = default(DateTime?), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo))
+        /// <param name="SubmittedDateTime">SubmittedDateTime.</param>
+        /// <param name="InstanceSource">InstanceSource.</param>
+        public WebFormInstanceMetadata(DateTime? ExpirationDateTime = default(DateTime?), DateTime? CreatedDateTime = default(DateTime?), WebFormUserInfo CreatedBy = default(WebFormUserInfo), DateTime? LastModifiedDateTime = default(DateTime?), WebFormUserInfo LastModifiedBy = default(WebFormUserInfo), DateTime? SubmittedDateTime = default(DateTime?), InstanceSource? InstanceSource = default(InstanceSource?))
         {
             // to ensure "ExpirationDateTime" is required (not null)
             if (ExpirationDateTime == null)
@@ -71,6 +78,8 @@ namespace DocuSign.WebForms.Model
             }
             this.LastModifiedDateTime = LastModifiedDateTime;
             this.LastModifiedBy = LastModifiedBy;
+            this.SubmittedDateTime = SubmittedDateTime;
+            this.InstanceSource = InstanceSource;
         }
         
         /// <summary>
@@ -101,6 +110,11 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="lastModifiedBy", EmitDefaultValue=false)]
         public WebFormUserInfo LastModifiedBy { get; set; }
         /// <summary>
+        /// Gets or Sets SubmittedDateTime
+        /// </summary>
+        [DataMember(Name="submittedDateTime", EmitDefaultValue=false)]
+        public DateTime? SubmittedDateTime { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -113,6 +127,8 @@ namespace DocuSign.WebForms.Model
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  LastModifiedDateTime: ").Append(LastModifiedDateTime).Append("\n");
             sb.Append("  LastModifiedBy: ").Append(LastModifiedBy).Append("\n");
+            sb.Append("  SubmittedDateTime: ").Append(SubmittedDateTime).Append("\n");
+            sb.Append("  InstanceSource: ").Append(InstanceSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -173,6 +189,16 @@ namespace DocuSign.WebForms.Model
                     this.LastModifiedBy == other.LastModifiedBy ||
                     this.LastModifiedBy != null &&
                     this.LastModifiedBy.Equals(other.LastModifiedBy)
+                ) && 
+                (
+                    this.SubmittedDateTime == other.SubmittedDateTime ||
+                    this.SubmittedDateTime != null &&
+                    this.SubmittedDateTime.Equals(other.SubmittedDateTime)
+                ) && 
+                (
+                    this.InstanceSource == other.InstanceSource ||
+                    this.InstanceSource != null &&
+                    this.InstanceSource.Equals(other.InstanceSource)
                 );
         }
 
@@ -197,6 +223,10 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.LastModifiedDateTime.GetHashCode();
                 if (this.LastModifiedBy != null)
                     hash = hash * 59 + this.LastModifiedBy.GetHashCode();
+                if (this.SubmittedDateTime != null)
+                    hash = hash * 59 + this.SubmittedDateTime.GetHashCode();
+                if (this.InstanceSource != null)
+                    hash = hash * 59 + this.InstanceSource.GetHashCode();
                 return hash;
             }
         }

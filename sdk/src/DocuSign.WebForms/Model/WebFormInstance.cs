@@ -52,7 +52,8 @@ namespace DocuSign.WebForms.Model
         /// <param name="Envelopes">The associated envelope that is created when the instance is submitted.</param>
         /// <param name="InstanceMetadata">InstanceMetadata.</param>
         /// <param name="FormValues">FormValues.</param>
-        public WebFormInstance(string FormUrl = default(string), string InstanceToken = default(string), DateTime? TokenExpirationDateTime = default(DateTime?), string Id = default(string), string FormId = default(string), string AccountId = default(string), string ClientUserId = default(string), List<string> Tags = default(List<string>), InstanceStatus? Status = default(InstanceStatus?), List<WebFormInstanceEnvelopes> Envelopes = default(List<WebFormInstanceEnvelopes>), WebFormInstanceMetadata InstanceMetadata = default(WebFormInstanceMetadata), WebFormValues FormValues = default(WebFormValues))
+        /// <param name="Recipients">The associated envelope that is created when the instance is submitted.</param>
+        public WebFormInstance(string FormUrl = default(string), string InstanceToken = default(string), DateTime? TokenExpirationDateTime = default(DateTime?), string Id = default(string), string FormId = default(string), string AccountId = default(string), string ClientUserId = default(string), List<string> Tags = default(List<string>), InstanceStatus? Status = default(InstanceStatus?), List<WebFormInstanceEnvelopes> Envelopes = default(List<WebFormInstanceEnvelopes>), WebFormInstanceMetadata InstanceMetadata = default(WebFormInstanceMetadata), WebFormValues FormValues = default(WebFormValues), List<WebFormInstanceRecipients> Recipients = default(List<WebFormInstanceRecipients>))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -74,6 +75,7 @@ namespace DocuSign.WebForms.Model
             this.Envelopes = Envelopes;
             this.InstanceMetadata = InstanceMetadata;
             this.FormValues = FormValues;
+            this.Recipients = Recipients;
         }
         
         /// <summary>
@@ -135,6 +137,12 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="formValues", EmitDefaultValue=false)]
         public WebFormValues FormValues { get; set; }
         /// <summary>
+        /// The associated envelope that is created when the instance is submitted
+        /// </summary>
+        /// <value>The associated envelope that is created when the instance is submitted</value>
+        [DataMember(Name="recipients", EmitDefaultValue=false)]
+        public List<WebFormInstanceRecipients> Recipients { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -154,6 +162,7 @@ namespace DocuSign.WebForms.Model
             sb.Append("  Envelopes: ").Append(Envelopes).Append("\n");
             sb.Append("  InstanceMetadata: ").Append(InstanceMetadata).Append("\n");
             sb.Append("  FormValues: ").Append(FormValues).Append("\n");
+            sb.Append("  Recipients: ").Append(Recipients).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -249,6 +258,11 @@ namespace DocuSign.WebForms.Model
                     this.FormValues == other.FormValues ||
                     this.FormValues != null &&
                     this.FormValues.Equals(other.FormValues)
+                ) && 
+                (
+                    this.Recipients == other.Recipients ||
+                    this.Recipients != null &&
+                    this.Recipients.SequenceEqual(other.Recipients)
                 );
         }
 
@@ -287,6 +301,8 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.InstanceMetadata.GetHashCode();
                 if (this.FormValues != null)
                     hash = hash * 59 + this.FormValues.GetHashCode();
+                if (this.Recipients != null)
+                    hash = hash * 59 + this.Recipients.GetHashCode();
                 return hash;
             }
         }

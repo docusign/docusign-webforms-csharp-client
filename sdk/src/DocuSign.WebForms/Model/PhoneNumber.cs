@@ -22,38 +22,39 @@ using System.ComponentModel.DataAnnotations;
 namespace DocuSign.WebForms.Model
 {
     /// <summary>
-    /// WebFormInstanceEnvelopes
+    /// Phone number of the user.
     /// </summary>
     [DataContract]
-    public partial class WebFormInstanceEnvelopes :  IEquatable<WebFormInstanceEnvelopes>, IValidatableObject
+    public partial class PhoneNumber :  IEquatable<PhoneNumber>, IValidatableObject
     {
-        public WebFormInstanceEnvelopes()
+        public PhoneNumber()
         {
             // Empty Constructor
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebFormInstanceEnvelopes" /> class.
+        /// Initializes a new instance of the <see cref="PhoneNumber" /> class.
         /// </summary>
-        /// <param name="Id">Id.</param>
-        /// <param name="CreatedDateTime">The dateTime when an envelope is created..</param>
-        public WebFormInstanceEnvelopes(string Id = default(string), DateTime? CreatedDateTime = default(DateTime?))
+        /// <param name="CountryCode">country code of the registered phone number..</param>
+        /// <param name="NationalNumber">Phone number of the user (without country code)..</param>
+        public PhoneNumber(string CountryCode = default(string), string NationalNumber = default(string))
         {
-            this.Id = Id;
-            this.CreatedDateTime = CreatedDateTime;
+            this.CountryCode = CountryCode;
+            this.NationalNumber = NationalNumber;
         }
         
         /// <summary>
-        /// Gets or Sets Id
+        /// country code of the registered phone number.
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
+        /// <value>country code of the registered phone number.</value>
+        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        public string CountryCode { get; set; }
         /// <summary>
-        /// The dateTime when an envelope is created.
+        /// Phone number of the user (without country code).
         /// </summary>
-        /// <value>The dateTime when an envelope is created.</value>
-        [DataMember(Name="createdDateTime", EmitDefaultValue=false)]
-        public DateTime? CreatedDateTime { get; set; }
+        /// <value>Phone number of the user (without country code).</value>
+        [DataMember(Name="nationalNumber", EmitDefaultValue=false)]
+        public string NationalNumber { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -61,9 +62,9 @@ namespace DocuSign.WebForms.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WebFormInstanceEnvelopes {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CreatedDateTime: ").Append(CreatedDateTime).Append("\n");
+            sb.Append("class PhoneNumber {\n");
+            sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  NationalNumber: ").Append(NationalNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,15 +86,15 @@ namespace DocuSign.WebForms.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as WebFormInstanceEnvelopes);
+            return this.Equals(obj as PhoneNumber);
         }
 
         /// <summary>
-        /// Returns true if WebFormInstanceEnvelopes instances are equal
+        /// Returns true if PhoneNumber instances are equal
         /// </summary>
-        /// <param name="other">Instance of WebFormInstanceEnvelopes to be compared</param>
+        /// <param name="other">Instance of PhoneNumber to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WebFormInstanceEnvelopes other)
+        public bool Equals(PhoneNumber other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -101,14 +102,14 @@ namespace DocuSign.WebForms.Model
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.CountryCode == other.CountryCode ||
+                    this.CountryCode != null &&
+                    this.CountryCode.Equals(other.CountryCode)
                 ) && 
                 (
-                    this.CreatedDateTime == other.CreatedDateTime ||
-                    this.CreatedDateTime != null &&
-                    this.CreatedDateTime.Equals(other.CreatedDateTime)
+                    this.NationalNumber == other.NationalNumber ||
+                    this.NationalNumber != null &&
+                    this.NationalNumber.Equals(other.NationalNumber)
                 );
         }
 
@@ -123,16 +124,28 @@ namespace DocuSign.WebForms.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
-                if (this.CreatedDateTime != null)
-                    hash = hash * 59 + this.CreatedDateTime.GetHashCode();
+                if (this.CountryCode != null)
+                    hash = hash * 59 + this.CountryCode.GetHashCode();
+                if (this.NationalNumber != null)
+                    hash = hash * 59 + this.NationalNumber.GetHashCode();
                 return hash;
             }
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         { 
+            // CountryCode (string) maxLength
+            if(this.CountryCode != null && this.CountryCode.Length > 7)
+            {
+                yield return new ValidationResult("Invalid value for CountryCode, length must be less than 7.", new [] { "CountryCode" });
+            }
+
+            // NationalNumber (string) maxLength
+            if(this.NationalNumber != null && this.NationalNumber.Length > 15)
+            {
+                yield return new ValidationResult("Invalid value for NationalNumber, length must be less than 15.", new [] { "NationalNumber" });
+            }
+
             yield break;
         }
     }

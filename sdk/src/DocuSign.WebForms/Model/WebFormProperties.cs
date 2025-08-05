@@ -37,10 +37,12 @@ namespace DocuSign.WebForms.Model
         /// </summary>
         /// <param name="Name">Name.</param>
         /// <param name="IsPrivateAccess">IsPrivateAccess.</param>
-        public WebFormProperties(string Name = default(string), bool? IsPrivateAccess = default(bool?))
+        /// <param name="AllowSending">When this property is true, form can be used for remote signing..</param>
+        public WebFormProperties(string Name = default(string), bool? IsPrivateAccess = default(bool?), bool? AllowSending = default(bool?))
         {
             this.Name = Name;
             this.IsPrivateAccess = IsPrivateAccess;
+            this.AllowSending = AllowSending;
         }
         
         /// <summary>
@@ -54,6 +56,12 @@ namespace DocuSign.WebForms.Model
         [DataMember(Name="isPrivateAccess", EmitDefaultValue=false)]
         public bool? IsPrivateAccess { get; set; }
         /// <summary>
+        /// When this property is true, form can be used for remote signing.
+        /// </summary>
+        /// <value>When this property is true, form can be used for remote signing.</value>
+        [DataMember(Name="allowSending", EmitDefaultValue=false)]
+        public bool? AllowSending { get; set; }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -63,6 +71,7 @@ namespace DocuSign.WebForms.Model
             sb.Append("class WebFormProperties {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsPrivateAccess: ").Append(IsPrivateAccess).Append("\n");
+            sb.Append("  AllowSending: ").Append(AllowSending).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,6 +117,11 @@ namespace DocuSign.WebForms.Model
                     this.IsPrivateAccess == other.IsPrivateAccess ||
                     this.IsPrivateAccess != null &&
                     this.IsPrivateAccess.Equals(other.IsPrivateAccess)
+                ) && 
+                (
+                    this.AllowSending == other.AllowSending ||
+                    this.AllowSending != null &&
+                    this.AllowSending.Equals(other.AllowSending)
                 );
         }
 
@@ -126,6 +140,8 @@ namespace DocuSign.WebForms.Model
                     hash = hash * 59 + this.Name.GetHashCode();
                 if (this.IsPrivateAccess != null)
                     hash = hash * 59 + this.IsPrivateAccess.GetHashCode();
+                if (this.AllowSending != null)
+                    hash = hash * 59 + this.AllowSending.GetHashCode();
                 return hash;
             }
         }

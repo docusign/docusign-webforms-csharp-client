@@ -7,7 +7,7 @@
     <Description>The Docusign NuGet package makes integrating Docusign into your apps and websites a super fast and painless process. The library is open sourced on GitHub, look for the docusign-webforms-csharp-client repository.</Description>
     <Company>DocuSign Inc.</Company>
     <Owners>DocuSign</Owners>
-    <Copyright>Copyright © Docusign 2024</Copyright>
+    <Copyright>Copyright © Docusign 2025</Copyright>
     <AssemblyTitle>DocuSign.WebForms</AssemblyTitle>
     <Authors>DocuSign</Authors>
     <OutputType>Library</OutputType>
@@ -16,7 +16,7 @@
     <RootNamespace>DocuSign.WebForms</RootNamespace>
     <AssemblyName>DocuSign.WebForms</AssemblyName>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <VersionPrefix>3.0.2</VersionPrefix>
+    <VersionPrefix>3.1.0</VersionPrefix>
     <VersionSuffix/>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -26,7 +26,7 @@
     <PackageLicenseUrl>https://github.com/docusign/docusign-webforms-csharp-client/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/docusign/docusign-webforms-csharp-client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>[v3.0.2] - WebForms API v1.1.0-1.0.4 - 11/15/2024</PackageReleaseNotes>
+    <PackageReleaseNotes>[v3.1.0] - WebForms API v1.1.0-1.0.5 - 7/15/2025</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462'">
     <DefineConstants>NET462</DefineConstants>
